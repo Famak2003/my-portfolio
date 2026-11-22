@@ -4,6 +4,18 @@
 
 /* The site is dark-only: <html> always has the `dark` class (see layout.tsx). */
 
+/* Navbar height, and the space it takes at the top (8px margin + bar). */
+:root {
+  --nav-h: 65px;
+  --nav-space: calc(var(--nav-h) + 8px);
+}
+@media (min-width: 450px) {
+  :root { --nav-h: 75px; }
+}
+@media (min-width: 640px) {
+  :root { --nav-h: 87px; }
+}
+
 html {
   color-scheme: dark;
   scroll-behavior: smooth;

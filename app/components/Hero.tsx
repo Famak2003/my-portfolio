@@ -14,7 +14,7 @@ const Cross = ({ className }: { className: string }) => (
 
 const Hero = () => {
     return (
-        <section aria-label="Introduction" className=" relative isolate flex w-full flex-col h-[calc(100svh-64px)] min-h-[600px] overflow-hidden border-b border-line ">
+        <section aria-label="Introduction" className=" relative isolate flex w-full flex-col h-[calc(100svh-var(--nav-space))] min-h-[600px] overflow-hidden border-b border-line ">
             {/* edge rulers: faint full-height guides near the screen edges, with a bracket on the left */}
             <div aria-hidden className=" pointer-events-none absolute inset-y-0 left-3 sm:left-5 hidden sm:block w-px bg-white/[0.05] " />
             <div aria-hidden className=" pointer-events-none absolute inset-y-0 right-3 sm:right-5 hidden sm:block w-px bg-white/[0.05] " />
@@ -43,7 +43,7 @@ const Hero = () => {
                         </h1>
 
                         <p className=" max-w-[600px] text-[15px] sm:text-[18px] leading-relaxed text-muted [text-shadow:0_2px_16px_rgba(0,0,0,0.9)] ">
-                            I build web, mobile and IoT products end to end: React and Next.js on the web,
+                            I build web and mobile products end to end: React and Next.js on the web,
                             React Native on iOS and Android, and NestJS with MySQL behind them.
                         </p>
 

@@ -171,20 +171,21 @@
           }
         ]
       }
-    ]
+    ],
+    "company": "NEU AI, Informatics & Innovation Center"
   },
   {
     "slug": "punica",
     "title": "Punica HR",
     "tagline": "Enterprise HR platform",
-    "summary": "An enterprise HR platform with accessible, multilingual dashboards for people, tasks, partners, inventory and documents, built around secure API integrations and fast data visualisation.",
+    "summary": "Punica's HR platform: accessible, multilingual dashboards for people, tasks, partners, inventory and documents. I built the frontend while at Gunsel, where Punica started.",
     "tags": [
       "Web",
       "Dashboard",
-      "Accessibility"
+      "Frontend"
     ],
-    "year": "2025",
-    "role": "Fullstack Engineer",
+    "year": "2024",
+    "role": "Frontend Developer",
     "platforms": [
       "Web"
     ],
@@ -202,23 +203,23 @@
       "desktop": "/projects/punica/landing-hero.webp",
       "secondary": "/projects/punica/dashboard-overview.webp"
     },
-    "overview": "Punica brings HR and operations into one platform: the People module for HR management, Tasks for project and task tracking, plus Partners, Inventory and Documents. I built accessible, multilingual dashboards on top of secure API integrations, with widget-based home screens and data visualisation for organisational management.",
+    "overview": "Punica brings HR and operations into one platform: the People module for HR management, Tasks for project and task tracking, plus Partners, Inventory and Documents. Working as a frontend developer at Gunsel, where Punica started, I built and refined the enterprise HR dashboards and workflows in React and Next.js, wired them to the REST APIs for real-time, data-driven views, and worked closely with designers and backend engineers to keep design-to-code fidelity high.",
     "highlights": [
       {
         "title": "Widget dashboards",
-        "text": "Configurable home screens with attendance clock-in, time requests, announcements, tasks, weekly hours and statistics widgets."
+        "text": "Home screens built from widgets: attendance clock-in, time requests, announcements, tasks, weekly hours and statistics."
       },
       {
-        "title": "Accessible by default",
-        "text": "Dashboards built with accessibility in mind, following WCAG 2.2 and ARIA practices."
+        "title": "Real-time data",
+        "text": "Integrated REST APIs and backend services so dashboards stay responsive and update in real time."
+      },
+      {
+        "title": "Accessible and responsive",
+        "text": "Refactored UI components for accessibility, mobile responsiveness and cross-browser consistency."
       },
       {
         "title": "Multilingual",
-        "text": "English and Turkish throughout the product and marketing site."
-      },
-      {
-        "title": "Secure integrations",
-        "text": "Frontend built around secure API integrations and high-performance data visualisation."
+        "text": "English and Turkish across the product."
       }
     ],
     "gallery": [
@@ -270,28 +271,34 @@
           }
         ]
       }
-    ]
+    ],
+    "company": "Gunsel",
+    "link": {
+      "label": "punica.app",
+      "href": "https://punica.app/"
+    }
   },
   {
     "slug": "neu-smart-switch",
     "title": "NEU Smart Switch",
-    "tagline": "IoT facility automation",
-    "summary": "A hardware-software system that switches sports facility lighting on and off from bookings, keeps working when the backend is down, and heals itself after a power cut.",
+    "tagline": "Smart-device integration for facility lighting",
+    "summary": "Booking-driven lighting for the university's sports facilities: a NestJS service and dashboard that control off-the-shelf Shelly smart switches over the campus network, keep working when the backend is down, and recover on their own after a power cut.",
     "tags": [
-      "IoT",
+      "IoT integration",
       "Backend",
       "Dashboard"
     ],
     "year": "2025",
-    "role": "Architect & Fullstack Engineer",
+    "role": "Fullstack Engineer",
     "platforms": [
       "Web",
-      "Hardware"
+      "Shelly devices"
     ],
     "techStack": [
       "NestJS",
       "Next.js",
       "Shelly smart switches",
+      "Shelly scripts",
       "Cron jobs",
       "Static IP networking",
       "VPS"
@@ -300,7 +307,7 @@
       "type": "schematic",
       "tint": "#6b1414"
     },
-    "overview": "An independent IoT system with its own dashboard and user management (roles and permissions) that schedules and controls lighting in the university's sports facilities based on new bookings. The server runs on the same subnet as the Shelly switches so it can talk to each one directly over a dedicated static IP.",
+    "overview": "A standalone system with its own dashboard and user management (roles and permissions) that schedules and controls the lighting in the university's sports facilities from new bookings. Instead of building hardware, I integrated ready-made Shelly smart switches: the server runs on the same subnet as the switches and talks to each one directly over a dedicated static IP, and small scripts on the devices handle recovery.",
     "highlights": [
       {
         "title": "Booking-driven lighting",
@@ -312,7 +319,7 @@
       },
       {
         "title": "Self-healing after power cuts",
-        "text": "A custom reboot script in the Shelly firmware pings the Smart Switch server when power returns, then validates and restores the correct state immediately."
+        "text": "A small script on each Shelly switch pings the Smart Switch server when power returns, so the server can validate and restore the correct state immediately."
       },
       {
         "title": "Direct device networking",
@@ -320,6 +327,11 @@
       }
     ],
     "gallery": [],
-    "note": "Dashboard screenshots coming soon. The system runs on the campus network."
+    "note": "Dashboard screenshots coming soon.",
+    "company": "NEU AI, Informatics & Innovation Center",
+    "access": {
+      "label": "Campus network only",
+      "detail": "Runs on the university's internal network, so there's no public link."
+    }
   }
 ]

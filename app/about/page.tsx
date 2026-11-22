@@ -24,7 +24,7 @@ const focusAreas = [
     {
         icon: faServer,
         title: "Backend",
-        text: "REST APIs, WebSockets and NestJS services backed by MySQL, deployed on VPS with Nginx, PM2 and Cloudflare, plus IoT integrations with Shelly smart switches.",
+        text: "REST APIs, WebSockets and NestJS services backed by MySQL, deployed on VPS with Nginx, PM2 and Cloudflare, plus integrations with Shelly smart switches for facility automation.",
     },
 ]
 
@@ -54,8 +54,8 @@ const About = () => {
                         </p>
                         <p className=" text-[16px] sm:text-[18px] leading-relaxed ">
                             I own the full lifecycle, from database design and DevOps to App Store releases,
-                            and I build to WCAG 2.2 accessibility standards. Lately I&apos;ve been expanding into
-                            hardware, building fault-tolerant IoT systems for real-time facility automation.
+                            and I build to WCAG 2.2 accessibility standards. Lately I&apos;ve also been integrating
+                            smart devices into fault-tolerant systems for real-time facility automation.
                         </p>
                     </div>
                 </section>

@@ -2,6 +2,7 @@ import Link from "next/link"
 import { getProjects, type Project } from "@/lib/projects"
 import { BracketLink } from "../ui/Bracket"
 import Showcase from "./Showcase"
+import AccessBadge from "./AccessBadge"
 
 const pad = (n: number) => String(n).padStart(2, "0")
 
@@ -37,7 +38,10 @@ const WorkRow = ({ project, index, total }: { project: Project, index: number, t
                 <dl className=" grid grid-cols-2 gap-4 border-y border-line py-4 ">
                     <div>
                         <dt className=" mono-label !text-[10px] text-muted ">Role</dt>
-                        <dd className=" mt-1 text-[14px] text-fg ">{project.role}</dd>
+                        <dd className=" mt-1 text-[14px] text-fg ">
+                            {project.role}
+                            {project.company && <span className=" block text-[12px] text-muted ">at {project.company}</span>}
+                        </dd>
                     </div>
                     <div>
                         <dt className=" mono-label !text-[10px] text-muted ">Platforms</dt>
@@ -52,6 +56,7 @@ const WorkRow = ({ project, index, total }: { project: Project, index: number, t
                             {project.link.label} ↗
                         </BracketLink>
                     )}
+                    {project.access && <AccessBadge {...project.access} />}
                 </div>
             </div>
         </article>
@@ -64,7 +69,7 @@ const SelectedWork = ({ id = "work", heading = "h2" }: { id?: string, heading?: 
     const Heading = heading
 
     return (
-        <section id={id} aria-labelledby={`${id}-title`} className=" w-full scroll-mt-20 py-20 sm:py-28 ">
+        <section id={id} aria-labelledby={`${id}-title`} className=" w-full scroll-mt-[var(--nav-space)] py-20 sm:py-28 ">
             <div className=" container-x flex flex-col gap-16 sm:gap-24 ">
                 <header className=" flex flex-col gap-6 border-b border-line pb-10 sm:flex-row sm:items-end sm:justify-between ">
                     <div className=" flex flex-col gap-4 ">
@@ -74,7 +79,7 @@ const SelectedWork = ({ id = "work", heading = "h2" }: { id?: string, heading?: 
                         </Heading>
                     </div>
                     <p className=" max-w-[360px] text-[15px] leading-relaxed text-muted sm:text-right ">
-                        Production systems across mobile, web, backend and hardware, owned from the database to the App Store.
+                        Production systems across mobile, web and backend, plus smart-device integrations, owned from the database to the App Store.
                         <span className=" mt-2 block mono-label text-fg ">{pad(projects.length)} projects</span>
                     </p>
                 </header>

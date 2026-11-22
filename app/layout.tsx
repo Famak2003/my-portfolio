@@ -24,7 +24,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: `${site.name} | ${site.title}`,
-  description: "Fullstack software engineer building web, mobile and IoT products with React, Next.js, React Native and NestJS.",
+  description: "Fullstack software engineer building web and mobile products end to end with React, Next.js, React Native and NestJS.",
 };
 
 export default function RootLayout({
@@ -39,7 +39,7 @@ export default function RootLayout({
         <div aria-hidden className="grain" />
         <Toaster position="bottom-center" toastOptions={{ style: { background: '#18181b', color: '#ededef', border: '1px solid rgba(255,255,255,0.09)' } }} />
         <NavBar />
-        <div className=" relative flex flex-col gap-12 w-full h-fit pt-16 ">
+        <div className=" relative flex flex-col gap-12 w-full h-fit ">
           {children}
           <Footer />
         </div>

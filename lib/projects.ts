@@ -29,7 +29,11 @@ export interface Project {
     role: string
     platforms: string[]
     techStack: string[]
+    /** Where it was built, when that differs from the obvious (e.g. Punica at Gunsel). */
+    company?: string
     link?: { label: string, href: string }
+    /** For projects with no public URL, e.g. ones that only run on an internal network. */
+    access?: { label: string, detail: string }
     showcase: Showcase
     overview: string
     highlights: { title: string, text: string }[]

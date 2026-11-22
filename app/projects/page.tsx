@@ -4,7 +4,7 @@ import { site } from "@/data/site"
 
 export const metadata: Metadata = {
     title: `Work | ${site.name}`,
-    description: "Case studies: NEU Link, Punica HR and NEU Smart Switch, across mobile, web, backend and IoT.",
+    description: "Case studies: NEU Link, Punica HR and NEU Smart Switch, across mobile, web, backend and smart-device integration.",
 }
 
 const Projects = () => (

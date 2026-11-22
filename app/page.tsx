@@ -79,7 +79,7 @@ export default function Page() {
         <main className=" flex flex-col gap-10 items-center text-textGray min-h-[100dvh] h-fit w-full ">
             <Hero />
             <SelectedWork />
-            <div id="tech-stack" className=" scroll-mt-[80px] flex flex-col justify-center items-center gap-5 py-14 section w-full bg-bgBlack ">
+            <div id="tech-stack" className=" scroll-mt-[var(--nav-space)] flex flex-col justify-center items-center gap-5 py-14 section w-full bg-bgBlack ">
                 <h2 className=" text-[34px] mobile:text-[48px] font-bold text-accent dark:text-brightRed "> Arsenal Wall </h2>
                 <ul className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-items-center gap-x-10 gap-y-10 gap-10 w-full max-w-5xl ">
                     {
