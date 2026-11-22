@@ -1,13 +1,14 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowRight, faCode, faMobileAlt, faServer } from "@fortawesome/free-solid-svg-icons"
+import { faCode, faMobileAlt, faServer } from "@fortawesome/free-solid-svg-icons"
+import Columns from "../components/home/Columns"
+import { BracketLink, Corners } from "../components/ui/Bracket"
 import { site, yearsOfExperience } from "@/data/site"
 
 export const metadata: Metadata = {
-    title: "About | Famak Dev",
-    description: "About Famakinde Oluwapelumi, Fullstack Software Engineer (Mobile, Web).",
+    title: `About | ${site.name}`,
+    description: `About ${site.name}, ${site.title} (${site.titleDetail}).`,
 }
 
 const focusAreas = [
@@ -28,31 +29,34 @@ const focusAreas = [
     },
 ]
 
-const stats = [
-    { value: `${yearsOfExperience()}+`, label: "Years experience" },
-    { value: "iOS · Android · Web", label: "Platforms shipped" },
-    { value: "WCAG 2.2", label: "Accessibility standard" },
-]
-
 const About = () => {
+    const stats = [
+        { value: `${yearsOfExperience()}+ years`, label: "Experience" },
+        { value: "iOS · Android · Web", label: "Platforms shipped" },
+        { value: "WCAG 2.2", label: "Accessibility standard" },
+    ]
+
     return (
-        <main className=" flex justify-center w-full section ">
-            <div className=" flex flex-col gap-12 w-full max-w-[1400px] ">
-                <section className=" grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-10 items-center ">
-                    <figure className=" relative w-full max-w-[420px] mx-auto aspect-square rounded-2xl overflow-hidden ring-1 ring-primary ">
-                        <Image className=" object-cover " src="/me2.png" alt="Famakinde Oluwapelumi" fill sizes="(max-width: 768px) 100vw, 420px" priority />
+        <main className=" w-full pt-10 sm:pt-14 ">
+            <div className=" container-x flex flex-col gap-16 sm:gap-20 ">
+                <section className=" grid grid-cols-1 items-center gap-10 md:grid-cols-[2fr_3fr] md:gap-14 ">
+                    <figure className=" relative mx-auto aspect-square w-full max-w-[420px] border border-line p-2 ">
+                        <Corners className=" border-white/50 " size={10} />
+                        <div className=" relative h-full w-full overflow-hidden ">
+                            <Image className=" object-cover grayscale-[15%] " src="/me2.png" alt={site.name} fill sizes="(max-width: 768px) 100vw, 420px" priority />
+                        </div>
                     </figure>
                     <div className=" flex flex-col gap-5 ">
-                        <h1 className=" letterSpacing text-primary dark:text-brightRed ">ABOUT ME</h1>
-                        <p className=" largeText ">Famakinde Oluwapelumi</p>
-                        <p className=" text-[18px] tracking-widest ">{site.title} | {site.titleDetail}</p>
-                        <p className=" text-[16px] sm:text-[18px] leading-relaxed ">
+                        <h1 className=" letterSpacing text-brightRed ">ABOUT ME</h1>
+                        <p className=" largeText font-semibold text-fg ">{site.name}</p>
+                        <p className=" mono-label text-muted ">{site.title} <span className=" text-white/25 ">/</span> {site.titleDetail}</p>
+                        <p className=" text-[16px] leading-relaxed text-fg/90 sm:text-[18px] ">
                             I&apos;m a software engineer with {yearsOfExperience()}+ years of experience building
                             scalable fullstack, web and mobile applications for international production
                             environments, with React, Next.js and React Native on the front and Node.js and
                             NestJS on the back.
                         </p>
-                        <p className=" text-[16px] sm:text-[18px] leading-relaxed ">
+                        <p className=" text-[16px] leading-relaxed text-muted sm:text-[18px] ">
                             I own the full lifecycle, from database design and DevOps to App Store releases,
                             and I build to WCAG 2.2 accessibility standards. Lately I&apos;ve also been integrating
                             smart devices into fault-tolerant systems for real-time facility automation.
@@ -60,44 +64,41 @@ const About = () => {
                     </div>
                 </section>
 
-                <section className=" grid grid-cols-1 sm:grid-cols-3 gap-5 ">
-                    {
-                        stats.map((stat) => (
-                            <div key={stat.label} className=" flex flex-col items-center gap-1 p-6 rounded-2xl bg-bgBlack text-white ">
-                                <span className=" text-[26px] sm:text-[30px] font-bold text-brightRed text-center ">{stat.value}</span>
-                                <span className=" text-[14px] tracking-widest text-textGray uppercase ">{stat.label}</span>
-                            </div>
-                        ))
-                    }
-                </section>
+                <dl className=" grid grid-cols-1 border-y border-line sm:grid-cols-3 ">
+                    {stats.map((s, i) => (
+                        <div key={s.label} className={` flex flex-col gap-1 py-6 ${i > 0 ? "border-t border-line sm:border-l sm:border-t-0 sm:pl-6" : ""} `}>
+                            <dt className=" mono-label !text-[10px] text-muted ">{s.label}</dt>
+                            <dd className=" text-[24px] font-semibold text-fg sm:text-[28px] ">{s.value}</dd>
+                        </div>
+                    ))}
+                </dl>
 
                 <section className=" flex flex-col gap-6 ">
-                    <h2 className=" letterSpacing ">WHAT I DO</h2>
-                    <ul className=" grid grid-cols-1 md:grid-cols-3 gap-5 ">
-                        {
-                            focusAreas.map((area) => (
-                                <li key={area.title} className=" card flex flex-col gap-3 p-6 rounded-2xl text-white ">
-                                    <FontAwesomeIcon className=" text-[28px] text-brightRed " icon={area.icon} />
-                                    <h3 className=" text-[22px] font-semibold ">{area.title}</h3>
-                                    <p className=" text-textGray ">{area.text}</p>
-                                </li>
-                            ))
-                        }
+                    <h2 className=" letterSpacing text-fg ">WHAT I DO</h2>
+                    <ul className=" grid grid-cols-1 gap-5 md:grid-cols-3 ">
+                        {focusAreas.map((area) => (
+                            <li key={area.title} className=" relative flex flex-col gap-3 border border-line bg-panel/60 p-6 ">
+                                <Corners className=" border-white/30 " size={6} />
+                                <FontAwesomeIcon className=" h-6 w-6 text-brightRed " icon={area.icon} />
+                                <h3 className=" text-[22px] font-semibold text-fg ">{area.title}</h3>
+                                <p className=" text-[15px] leading-relaxed text-muted ">{area.text}</p>
+                            </li>
+                        ))}
                     </ul>
                 </section>
+            </div>
 
-                <section className=" flex flex-col sm:flex-row gap-5 items-center justify-between p-8 rounded-2xl bg-bgBlack text-white ">
-                    <p className=" text-[22px] sm:text-[28px] font-semibold text-center sm:text-start ">
+            <Columns />
+
+            <div className=" container-x pb-10 ">
+                <section className=" relative flex flex-col items-center justify-between gap-6 border border-line bg-panel/60 p-8 sm:flex-row ">
+                    <Corners className=" border-white/40 " size={10} />
+                    <p className=" text-center text-[22px] font-semibold text-fg sm:text-start sm:text-[28px] ">
                         Want to see what I&apos;ve built?
                     </p>
-                    <div className=" flex flex-wrap gap-4 justify-center ">
-                        <Link href="/projects" className=" flex items-center gap-2 px-6 py-3 rounded-xl ring-1 ring-white hover:bg-white hover:text-black transition-colors ">
-                            View projects
-                        </Link>
-                        <Link href="/contact" className=" flex items-center gap-2 px-6 py-3 rounded-xl bg-secondary hover:bg-brightRed transition-colors ">
-                            Get in touch
-                            <FontAwesomeIcon className=" text-[14px] " icon={faArrowRight} />
-                        </Link>
+                    <div className=" flex flex-wrap justify-center gap-3 ">
+                        <BracketLink href="/projects">View projects</BracketLink>
+                        <BracketLink href="/contact" variant="solid">Get in touch →</BracketLink>
                     </div>
                 </section>
             </div>

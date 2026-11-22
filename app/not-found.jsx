@@ -1,24 +1,18 @@
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Link from "next/link"
+import { BracketLink } from "./components/ui/Bracket"
 
 const NotFound = () => {
-
     return (
-        <div className=" flex flex-col gap-3 sm:gap-5 justify-center items-center section ">
-            <p className=" text-[100px] sm:text-[200px] font-bold ">
+        <main className=" container-x flex min-h-[60vh] flex-col items-center justify-center gap-5 py-16 text-center ">
+            <p className=" mono-label text-brightRed ">● Error 404</p>
+            <p className=" text-[110px] font-semibold leading-none tracking-[-0.04em] text-fg sm:text-[200px] ">
                 404
             </p>
-            <p className=" italic text-[14px] sm:text-[18px] tracking-[8px] text-center ">Oops, Page not found!</p>
-            <p className=" text-[14px] sm:text-[18px] tracking-[2px] mb-3 text-center ">
+            <p className=" text-[14px] italic tracking-[8px] text-muted sm:text-[18px] ">Oops, Page not found!</p>
+            <p className=" mb-3 text-[14px] tracking-[2px] text-muted sm:text-[16px] ">
                 The link might be broken or the page has been moved
             </p>
-            <Link href={'/'} className=" flex gap-2 sm:gap-4 items-center bg-bgBlack text-white ring-1 ring-white hover:ring-brightRed py-2 px-8 rounded-2xl ">
-                <FontAwesomeIcon className=" text-[20px] " icon={faArrowLeft} />
-                <p className=" button ">Back to Homepage</p>
-            </Link>
-
-        </div>
+            <BracketLink href="/">← Back to Homepage</BracketLink>
+        </main>
     )
 }
 

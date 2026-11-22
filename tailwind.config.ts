@@ -54,6 +54,10 @@ export default {
         blink: {
           to: { visibility: 'hidden' },
         },
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        },
         // Updated shadow pulses to use Red (RGBA 155, 28, 28)
         shadowPulse: {
           '0%, 100%': {
@@ -74,6 +78,7 @@ export default {
       },
       animation: {
         'blink': 'blink 1.2s steps(2, start) infinite',
+        'marquee': 'marquee 40s linear infinite',
         'shadow-pulse': 'shadowPulse 5s ease-in-out infinite',
         'icon-shadow-pulse': 'iconShadowPulse 2.5s ease-in-out infinite'
       },

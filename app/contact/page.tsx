@@ -1,94 +1,61 @@
-'use client'
-
+import type { Metadata } from "next"
 import Image from "next/image"
-import { useRef, useState } from "react";
-import emailjs from '@emailjs/browser';
-import toast from "react-hot-toast";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons/faSpinner";
+import ContactForm from "../components/contact/ContactForm"
+import { Corners } from "../components/ui/Bracket"
+import { site } from "@/data/site"
 
-const Contact = () => {
-    
-    const form = useRef<HTMLFormElement>(null);
-    const [submitting, setSubmitting] = useState(false)
+export const metadata: Metadata = {
+    title: `Contact | ${site.name}`,
+    description: "Get in touch about a project, a role, or just to say hello.",
+}
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        
-        if (!form.current) return;
-        
-        const formData = new FormData(form.current);
-        const userName = formData.get('user_name') as string;
-        const userEmail = formData.get('user_email') as string;
-        const subject = formData.get('subject') as string;
-        const message = formData.get('message') as string;
+const links = [
+    { label: "LinkedIn", href: site.socials.linkedin, external: true },
+    { label: "GitHub", href: site.socials.github, external: true },
+]
 
-        
-        if (!userName.trim() || !userEmail.trim() || !subject.trim() || !message.trim()) {
-            toast.error('Please fill in all fields before sending.');
-            return; 
-        }
+/** The original contact card (CONTACT + photo on the left, "Let's Collaborate" + form on the right), restyled. */
+const Contact = () => (
+    <main className=" w-full pt-10 sm:pt-14 ">
+        <div className=" container-x ">
+            <div className=" relative grid w-full grid-cols-1 gap-10 border border-line bg-panel/70 p-6 sm:p-10 md:grid-cols-[2fr_3fr] md:gap-14 ">
+                <Corners className=" border-white/40 " size={10} />
 
-        setSubmitting(true)
-        emailjs
-        .sendForm(
-            process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "", 
-            process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "", 
-            form.current,
-            process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-        )
-        .then(
-            () => {
-                toast.success('Message sent successfully, we will get back to you shortly');
-                form.current?.reset();
-                setSubmitting(false)
-            },
-            (error) => {
-                console.error('FAILED...', error.text);
-                toast.error('Failed to send message. This may be due to a network issue, please try again.');
-                setSubmitting(false)
-            },
-        );
-    };
-
-    return(
-        <div className=" section ">
-            <div className=" grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-5 w-full p-6 sm:p-10 bg-bgBlack text-white dark:text-textGray rounded-2xl min-h-[584px] " >
-                <div className=" flex flex-col gap-5 justify-between items-start ">
-                    <h1 className=" letterSpacing "> CONTACT </h1>
-                    <figure className=" w-[160px] md:w-[223px] h-[160px] md:h-[223px] rounded-full overflow-hidden ring-1 ring-primary ">
-                        <Image className=" w-full h-full object-cover " width={223} height={223} src={'/me3.png'} alt="Famakinde" />
+                <div className=" flex flex-col items-start justify-between gap-8 ">
+                    <div className=" flex flex-col gap-4 ">
+                        <h1 className=" letterSpacing text-fg ">CONTACT</h1>
+                        <p className=" mono-label text-muted "><span className=" text-brightRed ">●</span> {site.location}</p>
+                    </div>
+                    <figure className=" h-[160px] w-[160px] overflow-hidden rounded-full ring-1 ring-primary md:h-[223px] md:w-[223px] ">
+                        <Image className=" h-full w-full object-cover " width={223} height={223} src="/me3.png" alt={site.name} />
                     </figure>
+                    <ul className=" flex flex-col gap-3 ">
+                        {links.map((l) => (
+                            <li key={l.label}>
+                                <a href={l.href} target="_blank" rel="noopener noreferrer" className=" mono-label text-muted transition-colors hover:text-fg ">
+                                    {l.label} ↗
+                                </a>
+                            </li>
+                        ))}
+                        <li>
+                            <a href={site.cv.href} download={site.cv.fileName} className=" mono-label text-muted transition-colors hover:text-fg ">
+                                Download CV ↓
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div className=" flex flex-col gap-3 ">
-                    <h2 className=" largeText ">
-                        Let&apos;s Collaborate
-                    </h2>
-                    <p>
+
+                <div className=" flex flex-col gap-5 ">
+                    <h2 className=" largeText font-semibold text-fg ">Let&apos;s Collaborate</h2>
+                    <p className=" text-[16px] leading-relaxed text-muted ">
                         Have a project in mind, a role to fill, or just want to say hello? Send me a message
                         and I&apos;ll get back to you as soon as I can.
                     </p>
-                    <form ref={form} onSubmit={(e) => handleSubmit(e)} className=" flex flex-col gap-2 ">
-                        <input className=" p-2 bg-textGray text-white placeholder:text-white outline-none w-full h-[52.4px] rounded-xl " name="subject" placeholder="Subject" type="text" />
-                        <input className=" p-2 bg-textGray text-white placeholder:text-white outline-none w-full h-[52.4px] rounded-xl " name="user_name" placeholder="Name" type="text" />
-                        <input className=" p-2 bg-textGray text-white placeholder:text-white outline-none w-full h-[52.4px] rounded-xl " name="user_email" placeholder="Email" type="email" />
-                        <textarea className=" p-2 bg-textGray text-white placeholder:text-white outline-none w-full h-[100px] rounded-xl " name="message" placeholder="Message" />
-                        <button className=" bg-primary hover:bg-secondary disabled:opacity-70 w-full h-[52.4px] rounded-xl transition-colors " type="submit" disabled={submitting} >
-                            {
-                                submitting ? (
-                                    <FontAwesomeIcon className=" animate-spin rounded-3xl text-2xl " icon={faSpinner}/>
-                                ) : (
-                                    <p className=" text-white ">
-                                        Submit
-                                    </p>
-                                )
-                            }
-                        </button>
-                    </form>
+                    <ContactForm />
                 </div>
             </div>
         </div>
-    )
-}
+    </main>
+)
 
 export default Contact
