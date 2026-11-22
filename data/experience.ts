@@ -1,4 +1,6 @@
 // Career, skills and education, taken from the CV in public/cv.
+// Punica HR was built at Gunsel, where Punica started; Punica is now a company inside the
+// NEU AI, Informatics & Innovation Center, where NEU Link and NEU Smart Switch were built.
 
 export interface Job {
     period: string
@@ -13,7 +15,7 @@ export interface Job {
 export const experience: Job[] = [
     {
         period: "Jun 2025 – Now",
-        company: "NEU AI, Informatics & Innovation Center",
+        company: "Punica · NEU AI, Informatics & Innovation Center",
         role: "Full-Stack & Mobile Engineer",
         location: "Nicosia, Cyprus",
         text: "End-to-end ownership of the NEU Link ecosystem (iOS, Android, Next.js web and admin) and NEU Smart Switch, including the NestJS backends and running production on a VPS with Nginx, PM2 and Cloudflare.",
@@ -33,13 +35,6 @@ export const experience: Job[] = [
         location: "Nicosia, Cyprus",
         text: "Built enterprise HR dashboards and workflows in React and Next.js, including Punica HR, with real-time REST integrations and accessibility and responsiveness improvements.",
         projects: ["punica"],
-    },
-    {
-        period: "Jul 2023 – Mar 2024",
-        company: "VersityEdge",
-        role: "Frontend Developer",
-        location: "Remote",
-        text: "Led frontend development of reusable and embedded React systems, set up component patterns that cut development time by about 30%, and mentored junior developers.",
     },
 ]
 
@@ -87,5 +82,5 @@ export const education = {
 
 export const community = {
     title: "Sharing what I learn",
-    text: "I write about mobile, frontend and backend engineering for a network of 3,800+ professionals on LinkedIn.",
+    text: "I write about mobile, frontend and backend engineering for a network of 4,156 professionals on LinkedIn.",
 }

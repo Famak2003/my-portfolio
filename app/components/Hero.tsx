@@ -60,7 +60,7 @@ const Hero = () => {
                         <Image src="/prof-pic1.jpg" alt={site.name} fill sizes="44px" className=" object-cover object-top " />
                     </span>
                     <p className=" text-[13px] leading-snug text-muted ">
-                        {site.currentRole} at Near East University, {site.location}
+                        {site.currentRole} at Punica, NEU Innovation Center, {site.location}
                     </p>
                 </div>
 

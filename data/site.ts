@@ -9,8 +9,9 @@ export const site = {
     location: "Nicosia, Cyprus",
     timeZone: "Europe/Nicosia",
     currentRole: "Full-Stack & Mobile Engineer",
-    currentCompany: "NEU",
-    // First professional role started July 2023 (VersityEdge).
+    currentCompany: "Punica",
+    // First professional role started July 2023. That role is no longer listed on the site
+    // or CV, but it still counts towards years of experience.
     careerStart: new Date("2023-07-01"),
     cv: {
         href: "/cv/Famakinde-Oluwapelumi-CV.pdf",
