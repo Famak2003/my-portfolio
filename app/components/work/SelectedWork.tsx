@@ -3,6 +3,7 @@ import { getProjects, type Project } from "@/lib/projects"
 import { BracketLink } from "../ui/Bracket"
 import Showcase from "./Showcase"
 import AccessBadge from "./AccessBadge"
+import Reveal from "../motion/Reveal"
 
 const pad = (n: number) => String(n).padStart(2, "0")
 
@@ -10,7 +11,7 @@ const WorkRow = ({ project, index, total }: { project: Project, index: number, t
     const flip = index % 2 === 1
 
     return (
-        <article className=" grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-14 ">
+        <Reveal as="article" className=" grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-14 ">
             <Link
                 href={`/projects/${project.slug}`}
                 aria-label={`View ${project.title} case study`}
@@ -59,7 +60,7 @@ const WorkRow = ({ project, index, total }: { project: Project, index: number, t
                     {project.access && <AccessBadge {...project.access} />}
                 </div>
             </div>
-        </article>
+        </Reveal>
     )
 }
 
@@ -71,7 +72,7 @@ const SelectedWork = ({ id = "work", heading = "h2" }: { id?: string, heading?: 
     return (
         <section id={id} aria-labelledby={`${id}-title`} className=" w-full scroll-mt-[var(--nav-space)] py-20 sm:py-28 ">
             <div className=" container-x flex flex-col gap-16 sm:gap-24 ">
-                <header className=" flex flex-col gap-6 border-b border-line pb-10 sm:flex-row sm:items-end sm:justify-between ">
+                <Reveal as="header" className=" flex flex-col gap-6 border-b border-line pb-10 sm:flex-row sm:items-end sm:justify-between ">
                     <div className=" flex flex-col gap-4 ">
                         <p className=" mono-label text-muted "><span className=" text-brightRed ">●</span> Selected work</p>
                         <Heading id={`${id}-title`} className=" text-[40px] sm:text-[56px] lg:text-[72px] font-semibold uppercase leading-[0.95] tracking-[-0.02em] text-fg ">
@@ -82,7 +83,7 @@ const SelectedWork = ({ id = "work", heading = "h2" }: { id?: string, heading?: 
                         Production systems across mobile, web and backend, plus smart-device integrations, owned from the database to the App Store.
                         <span className=" mt-2 block mono-label text-fg ">{pad(projects.length)} projects</span>
                     </p>
-                </header>
+                </Reveal>
 
                 {projects.map((project, i) => (
                     <WorkRow key={project.slug} project={project} index={i} total={projects.length} />

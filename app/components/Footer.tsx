@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Image from "next/image"
 import Link from "next/link"
 import { site } from "@/data/site"
+import Reveal from "./motion/Reveal"
 
 const services = [
     'Frontend Development',
@@ -28,7 +29,7 @@ const Footer = () => {
     return (
         <footer className=" relative w-full overflow-hidden rounded-t-3xl border-t border-line bg-panel/60 ">
             <div className=" container-x flex flex-col gap-6 pt-24 ">
-                <div className=" mb-10 flex flex-col items-center justify-center gap-6 xxl:gap-8 ">
+                <Reveal className=" mb-10 flex flex-col items-center justify-center gap-6 xxl:gap-8 ">
                     <h2 className=" largeText w-full max-w-[420px] text-center font-semibold text-fg xxl:max-w-[640px] xxl:text-[90px] xxl:leading-[95px] ">
                         Have a cool project?
                     </h2>
@@ -38,7 +39,7 @@ const Footer = () => {
                             <FontAwesomeIcon className=" text-[12px] text-primary transition-transform group-hover:translate-x-0.5 sm:text-[16px] " icon={faArrowRight} />
                         </span>
                     </Link>
-                </div>
+                </Reveal>
 
                 <hr className=" w-full border-line " />
 

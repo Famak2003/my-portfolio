@@ -5,6 +5,7 @@ import { faCode, faMobileAlt, faServer } from "@fortawesome/free-solid-svg-icons
 import Columns from "../components/home/Columns"
 import { BracketLink, Corners } from "../components/ui/Bracket"
 import { site, experience } from "@/data/site"
+import Reveal from "../components/motion/Reveal"
 
 export const metadata: Metadata = {
     title: `About | ${site.name}`,
@@ -73,7 +74,7 @@ const About = () => {
                     ))}
                 </dl>
 
-                <section className=" flex flex-col gap-6 ">
+                <Reveal as="section" className=" flex flex-col gap-6 ">
                     <h2 className=" letterSpacing text-fg ">WHAT I DO</h2>
                     <ul className=" grid grid-cols-1 gap-5 md:grid-cols-3 ">
                         {focusAreas.map((area) => (
@@ -85,7 +86,7 @@ const About = () => {
                             </li>
                         ))}
                     </ul>
-                </section>
+                </Reveal>
             </div>
 
             <Columns />

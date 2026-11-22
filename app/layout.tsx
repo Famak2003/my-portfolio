@@ -4,6 +4,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config as faConfig } from "@fortawesome/fontawesome-svg-core";
 import "./globals.css";
 import NavBar from "./components/NavBar";
+import ScrollRuler from "./components/motion/ScrollRuler";
 import Footer from "./components/Footer";
 import { Toaster } from "react-hot-toast";
 import { site } from "@/data/site";
@@ -39,6 +40,7 @@ export default function RootLayout({
         <div aria-hidden className="grain" />
         <Toaster position="bottom-center" toastOptions={{ style: { background: '#18181b', color: '#ededef', border: '1px solid rgba(255,255,255,0.09)' } }} />
         <NavBar />
+        <ScrollRuler />
         <div className=" relative flex flex-col gap-12 w-full h-fit ">
           {children}
           <Footer />

@@ -1,13 +1,14 @@
 import Image from "next/image"
 import type { ProjectImage } from "@/lib/projects"
+import Reveal from "../motion/Reveal"
 
 const Shot = ({ img, sizes, capped = false }: { img: ProjectImage, sizes: string, capped?: boolean }) => (
-    <figure className=" flex flex-col gap-2 ">
+    <Reveal as="figure" className=" flex flex-col gap-2 ">
         <div className={` overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.9)] ${capped ? "max-h-[420px] sm:max-h-[680px]" : ""} `}>
             <Image src={img.src} alt={img.alt} width={img.w} height={img.h} sizes={sizes} className=" block h-auto w-full " />
         </div>
         <figcaption className=" text-[12px] leading-snug text-muted ">{img.alt}</figcaption>
-    </figure>
+    </Reveal>
 )
 
 /**

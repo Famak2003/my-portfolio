@@ -9,6 +9,7 @@ import { PhoneFrame } from "../../components/work/Frames"
 import { BracketFrame, BracketLink } from "../../components/ui/Bracket"
 import { getProject, getProjects } from "@/lib/projects"
 import { site } from "@/data/site"
+import Reveal from "../../components/motion/Reveal"
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -35,10 +36,10 @@ const pad = (n: number) => String(n).padStart(2, "0")
  * `stacked` puts the content full width under the heading (for image grids).
  */
 const Section = ({ title, children, stacked = false }: { title: string, children: React.ReactNode, stacked?: boolean }) => (
-    <section className={` grid grid-cols-1 gap-6 border-t border-line pt-10 ${stacked ? "" : "md:grid-cols-2 md:gap-10"} `}>
+    <Reveal as="section" className={` grid grid-cols-1 gap-6 border-t border-line pt-10 ${stacked ? "" : "md:grid-cols-2 md:gap-10"} `}>
         <h2 className=" letterSpacing text-fg ">{title}</h2>
         <div>{children}</div>
-    </section>
+    </Reveal>
 )
 
 const ProjectDetail = async ({ params }: Props) => {
@@ -98,7 +99,7 @@ const ProjectDetail = async ({ params }: Props) => {
                     </ul>
                 </header>
 
-                <Showcase project={project} priority />
+                <Reveal delay={0.1}><Showcase project={project} priority /></Reveal>
 
                 <Section title="PROJECT DESCRIPTION">
                     <p className=" text-[16px] sm:text-[18px] leading-relaxed text-fg/90 ">{project.overview}</p>

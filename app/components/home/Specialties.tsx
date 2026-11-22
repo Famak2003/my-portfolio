@@ -1,3 +1,5 @@
+import ScrollText from "../motion/ScrollText"
+
 const KEYWORDS = ["Mobile apps", "Web platforms", "Admin dashboards", "APIs", "Real-time", "Accessibility", "DevOps"]
 
 /** Infinite, slow keyword marquee. Two copies of the list scroll as one; it stops for reduced motion. */
@@ -21,12 +23,20 @@ const Specialties = () => (
     <section aria-label="What I specialise in" className=" w-full pt-20 sm:pt-28 ">
         <div className=" container-x flex flex-col gap-8 pb-14 ">
             <p className=" mono-label text-muted "><span className=" text-brightRed ">●</span> What I do</p>
-            <p className=" max-w-[1100px] text-[28px] sm:text-[40px] lg:text-[52px] font-medium leading-[1.12] tracking-[-0.02em] text-muted ">
-                I specialise in <span className=" text-fg ">cross-platform mobile apps</span>,{" "}
-                <span className=" text-fg ">Next.js web platforms</span> and{" "}
-                <span className=" text-fg ">admin dashboards</span>, and the{" "}
-                <span className=" text-fg ">NestJS APIs</span> that power them, built accessible and run in production.
-            </p>
+            <ScrollText
+                className=" max-w-[1100px] text-[28px] sm:text-[40px] lg:text-[52px] font-medium leading-[1.12] tracking-[-0.02em] "
+                segments={[
+                    { text: "I specialise in " },
+                    { text: "cross-platform mobile apps", strong: true },
+                    { text: ", " },
+                    { text: "Next.js web platforms", strong: true },
+                    { text: " and " },
+                    { text: "admin dashboards", strong: true },
+                    { text: ", and the " },
+                    { text: "NestJS APIs", strong: true },
+                    { text: " that power them, built accessible and run in production." },
+                ]}
+            />
         </div>
         <Marquee />
     </section>

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { community, education, experience, skills } from "@/data/experience"
 import { getProject } from "@/lib/projects"
+import Reveal from "../motion/Reveal"
 
 const pad = (n: number) => String(n).padStart(2, "0")
 
@@ -23,7 +24,7 @@ const Columns = () => (
     <section aria-label="Experience and skills" id="experience" className=" w-full scroll-mt-[var(--nav-space)] py-20 sm:py-28 ">
         <div className=" container-x grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-12 ">
             {/* Experience */}
-            <div aria-labelledby="col-experience">
+            <Reveal>
                 <ColumnTitle id="col-experience">Experience</ColumnTitle>
                 <ol>
                     {experience.map((job, i) => (
@@ -46,10 +47,10 @@ const Columns = () => (
                         </Entry>
                     ))}
                 </ol>
-            </div>
+            </Reveal>
 
             {/* Skills */}
-            <div aria-labelledby="col-skills">
+            <Reveal delay={0.1}>
                 <ColumnTitle id="col-skills">Skills</ColumnTitle>
                 <ol>
                     {skills.map((group, i) => (
@@ -64,10 +65,10 @@ const Columns = () => (
                         </Entry>
                     ))}
                 </ol>
-            </div>
+            </Reveal>
 
             {/* Education & community */}
-            <div aria-labelledby="col-education" className=" md:col-span-2 lg:col-span-1 ">
+            <Reveal delay={0.2} className=" md:col-span-2 lg:col-span-1 ">
                 <ColumnTitle id="col-education">Education</ColumnTitle>
                 <ol>
                     <Entry index={0}>
@@ -81,7 +82,7 @@ const Columns = () => (
                         <p className=" text-[14px] leading-relaxed text-muted ">{community.text}</p>
                     </Entry>
                 </ol>
-            </div>
+            </Reveal>
         </div>
     </section>
 )

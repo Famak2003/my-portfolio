@@ -3,6 +3,7 @@ import TechOrbit from "./hero/TechOrbit"
 import Ticker from "./hero/Ticker"
 import { BracketLink } from "./ui/Bracket"
 import { site } from "@/data/site"
+import Reveal from "./motion/Reveal"
 
 /** Small "+" registration marks, like crop marks on a print sheet. */
 const Cross = ({ className }: { className: string }) => (
@@ -18,7 +19,7 @@ const Hero = () => {
             {/* edge rulers: faint full-height guides near the screen edges, with a bracket on the left */}
             <div aria-hidden className=" pointer-events-none absolute inset-y-0 left-3 sm:left-5 hidden sm:block w-px bg-white/[0.05] " />
             <div aria-hidden className=" pointer-events-none absolute inset-y-0 right-3 sm:right-5 hidden sm:block w-px bg-white/[0.05] " />
-            <div aria-hidden className=" pointer-events-none absolute left-3 sm:left-5 top-1/2 hidden sm:block h-40 w-2 -translate-y-1/2 border-y border-l border-white/25 " />
+            <div aria-hidden className=" pointer-events-none absolute left-3 sm:left-5 top-1/2 hidden sm:block xl:hidden h-40 w-2 -translate-y-1/2 border-y border-l border-white/25 " />
 
             <div className=" relative flex-1 ">
                 <TechOrbit />
@@ -30,10 +31,11 @@ const Hero = () => {
                         <Cross className=" -left-1.5 -bottom-1.5 " />
                         <Cross className=" -right-1.5 -bottom-1.5 " />
 
-                        <p className=" mono-label text-muted ">
+                        <Reveal as="p" className=" mono-label text-muted " y={12}>
                             <span className=" text-brightRed ">●</span> {site.title} <span className=" text-white/25 ">/</span> {site.titleDetail}
-                        </p>
+                        </Reveal>
 
+                        <Reveal delay={0.1}>
                         <h1 className=" text-fg font-semibold uppercase leading-[0.95] tracking-[-0.02em] text-[44px] mobile:text-[54px] sm:text-[72px] lg:text-[92px] 2xl:text-[112px] [text-shadow:0_4px_30px_rgba(0,0,0,0.8)] ">
                             <span className=" block text-muted ">From server</span>
                             <span className=" block ">
@@ -41,16 +43,17 @@ const Hero = () => {
                                 <span aria-hidden className=" ml-2 inline-block h-[0.78em] w-[0.42em] translate-y-[0.06em] bg-brightRed animate-blink " />
                             </span>
                         </h1>
+                        </Reveal>
 
-                        <p className=" max-w-[600px] text-[15px] sm:text-[18px] leading-relaxed text-muted [text-shadow:0_2px_16px_rgba(0,0,0,0.9)] ">
+                        <Reveal as="p" delay={0.25} y={12} className=" max-w-[600px] text-[15px] sm:text-[18px] leading-relaxed text-muted [text-shadow:0_2px_16px_rgba(0,0,0,0.9)] ">
                             I build web and mobile products end to end: React and Next.js on the web,
                             React Native on iOS and Android, and NestJS with MySQL behind them.
-                        </p>
+                        </Reveal>
 
-                        <div className=" flex flex-wrap items-center justify-center gap-3 pt-2 ">
+                        <Reveal delay={0.35} y={12} className=" flex flex-wrap items-center justify-center gap-3 pt-2 ">
                             <BracketLink href="/contact" variant="solid">Get in touch</BracketLink>
                             <BracketLink href={site.cv.href} download={site.cv.fileName}>Download CV ↓</BracketLink>
-                        </div>
+                        </Reveal>
                     </div>
                 </div>
 
