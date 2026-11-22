@@ -41,10 +41,10 @@ const About = () => {
         <main className=" w-full pt-10 sm:pt-14 ">
             <div className=" container-x flex flex-col gap-16 sm:gap-20 ">
                 <section className=" grid grid-cols-1 items-center gap-10 md:grid-cols-[2fr_3fr] md:gap-14 ">
-                    <figure className=" relative mx-auto aspect-square w-full max-w-[420px] border border-line p-2 ">
+                    <figure className=" relative mx-auto aspect-[4/5] w-full max-w-[420px] border border-line p-2 ">
                         <Corners className=" border-white/50 " size={10} />
                         <div className=" relative h-full w-full overflow-hidden ">
-                            <Image className=" object-cover grayscale-[15%] " src="/me2.png" alt={site.name} fill sizes="(max-width: 768px) 100vw, 420px" priority />
+                            <Image className=" object-cover object-top " src="/prof-pic1.jpg" alt={site.name} fill sizes="(max-width: 768px) 100vw, 420px" priority />
                         </div>
                     </figure>
                     <div className=" flex flex-col gap-5 ">

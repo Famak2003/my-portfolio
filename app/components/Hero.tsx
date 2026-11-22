@@ -60,7 +60,7 @@ const Hero = () => {
                 {/* bottom-left: who's behind this */}
                 <div className=" absolute bottom-5 left-5 z-[200] hidden lg:flex items-center gap-3 max-w-[300px] ">
                     <span className=" relative h-11 w-11 shrink-0 overflow-hidden rounded-full ring-1 ring-white/15 ">
-                        <Image src="/prof-pic1.jpg" alt={site.name} fill sizes="44px" className=" object-cover object-top " />
+                        <Image src="/prof-pic1-headshot.jpg" alt={site.name} fill sizes="44px" className=" object-cover " />
                     </span>
                     <p className=" text-[13px] leading-snug text-muted ">
                         {site.currentRole} at Punica, NEU Innovation Center, {site.location}

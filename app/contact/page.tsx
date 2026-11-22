@@ -27,7 +27,7 @@ const Contact = () => (
                         <p className=" mono-label text-muted "><span className=" text-brightRed ">●</span> {site.location}</p>
                     </div>
                     <figure className=" h-[160px] w-[160px] overflow-hidden rounded-full ring-1 ring-primary md:h-[223px] md:w-[223px] ">
-                        <Image className=" h-full w-full object-cover " width={223} height={223} src="/me3.png" alt={site.name} />
+                        <Image className=" h-full w-full object-cover " width={223} height={223} src="/prof-pic1-headshot.jpg" alt={site.name} />
                     </figure>
                     <ul className=" flex flex-col gap-3 ">
                         {links.map((l) => (

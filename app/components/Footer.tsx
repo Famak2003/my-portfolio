@@ -46,7 +46,7 @@ const Footer = () => {
                 <div className=" my-5 flex w-full flex-col items-center gap-10 lmobile:flex-row lmobile:items-start lmobile:justify-between ">
                     <div className=" flex w-full max-w-[240px] flex-col items-center gap-4 lmobile:items-start ">
                         <figure className=" h-[120px] w-[120px] overflow-hidden rounded-full ring-1 ring-primary ">
-                            <Image className=" h-full w-full object-cover " width={120} height={120} alt={site.name} src="/me1.png" />
+                            <Image className=" h-full w-full object-cover " width={120} height={120} alt={site.name} src="/prof-pic1-headshot.jpg" />
                         </figure>
                         <p className=" text-center text-[18px] text-fg lmobile:text-start ">
                             {site.title}
