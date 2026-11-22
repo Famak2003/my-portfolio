@@ -1,20 +1,44 @@
 import projectsData from "@/data/projects.json"
 
+export interface ProjectImage {
+    src: string
+    alt: string
+    w: number
+    h: number
+}
+
+export interface GallerySection {
+    title: string
+    /** `phone` renders in phone frames, `desktop` in browser frames. */
+    kind: "phone" | "desktop"
+    images: ProjectImage[]
+}
+
+export type Showcase =
+    | { type: "devices", tint: string, desktop: string, phones: string[] }
+    | { type: "browsers", tint: string, desktop: string, secondary: string }
+    | { type: "schematic", tint: string }
+
 export interface Project {
     slug: string
     title: string
+    tagline: string
     summary: string
+    tags: string[]
     year: string
     role: string
+    platforms: string[]
     techStack: string[]
-    coverImage: string
-    description: string
-    solutions: string
-    /** First 3 images show above the description, the rest below the solutions. */
-    gallery: string[]
+    link?: { label: string, href: string }
+    showcase: Showcase
+    overview: string
+    highlights: { title: string, text: string }[]
+    gallery: GallerySection[]
+    /** Shown on the project page, e.g. when screenshots are still to come. */
+    note?: string
 }
 
-const projects: Project[] = projectsData
+const projects = projectsData as Project[]
 
 export const getProjects = (): Project[] => projects
 

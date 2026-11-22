@@ -65,7 +65,7 @@ const Hero = () => {
                 </div>
 
                 {/* bottom-right: scroll cue */}
-                <a href="#tech-stack" className=" absolute bottom-6 right-6 z-[200] hidden lg:block mono-label text-muted hover:text-fg ">
+                <a href="#work" className=" absolute bottom-6 right-6 z-[200] hidden lg:block mono-label text-muted hover:text-fg ">
                     Scroll ↓
                 </a>
             </div>

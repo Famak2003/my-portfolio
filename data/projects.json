@@ -1,14 +1,325 @@
 [
   {
-    "slug": "social-media-app",
-    "title": "Designing a Social Media App for the Black Experience",
-    "summary": "A community-first social platform focused on culture, creators and conversation.",
-    "year": "2020/2021",
-    "role": "Fullstack Dev",
-    "techStack": ["JavaScript", "React JS", "Next JS"],
-    "coverImage": "/fire.jpeg",
-    "description": "Placeholder: describe the problem this project solved, who it was for, and what your role in it was. Replace this entry in data/projects.json with your real project details.",
-    "solutions": "Placeholder: explain the key decisions you made, the architecture you chose, and the results you achieved.",
-    "gallery": ["/me1.png", "/me2.png", "/me3.png", "/nice.avif", "/pic.jpg", "/bike.jpg"]
+    "slug": "neu-link",
+    "title": "NEU Link",
+    "tagline": "Smart campus ecosystem",
+    "summary": "The primary smart campus gateway for Near East University: native iOS and Android apps, a Next.js web app and admin dashboard, all on NestJS backends I build, deploy and run.",
+    "tags": [
+      "Mobile",
+      "Web",
+      "Backend",
+      "DevOps"
+    ],
+    "year": "2025 – Now",
+    "role": "Full-Stack & Mobile Engineer",
+    "platforms": [
+      "iOS",
+      "Android",
+      "Web"
+    ],
+    "techStack": [
+      "React Native",
+      "Next.js",
+      "NestJS",
+      "TypeScript",
+      "Mapbox / Apple Maps",
+      "BLE",
+      "Nginx",
+      "PM2",
+      "Cloudflare"
+    ],
+    "link": {
+      "label": "link.neu.edu.tr",
+      "href": "https://link.neu.edu.tr"
+    },
+    "showcase": {
+      "type": "devices",
+      "tint": "#7a1220",
+      "desktop": "/projects/neu-link/web-map-buses.webp",
+      "phones": [
+        "/projects/neu-link/app-bus-route-dark.webp",
+        "/projects/neu-link/app-bus-schedule-light.webp"
+      ]
+    },
+    "overview": "I own the whole NEU Link ecosystem end to end: the React Native apps on iOS and Android, the Next.js web app at link.neu.edu.tr, the Next.js admin dashboard, and the NestJS services behind them. I also run production myself on a VPS with Nginx as reverse proxy, PM2 for process management and Cloudflare for DNS and performance.",
+    "highlights": [
+      {
+        "title": "Live transit & QR boarding",
+        "text": "Real-time bus tracking with live locations and ETAs to each stop, plus in-app QR codes for fast boarding."
+      },
+      {
+        "title": "Secure event attendance",
+        "text": "Attendance for students and staff verified in layers: geolocation, automatic BLE hardware detection and dynamic or static QR scanning, because events feed into personnel earnings and performance points."
+      },
+      {
+        "title": "Capacity-aware campus maps",
+        "text": "Dual-platform maps (Apple Maps / Mapbox) with campus-wide routing, building directions and live capacity for gathering spaces."
+      },
+      {
+        "title": "Bookings on the lock screen",
+        "text": "Facility reservations with iOS Live Activities counting down each slot on the lock screen, and equivalent notifications on Android."
+      },
+      {
+        "title": "1-to-1 web parity",
+        "text": "A full Next.js web version of the platform with the same features as the mobile apps."
+      },
+      {
+        "title": "Run in production",
+        "text": "Deployment and operations on a VPS with Nginx, PM2 and Cloudflare, owned from database to App Store release."
+      }
+    ],
+    "gallery": [
+      {
+        "title": "Mobile app",
+        "kind": "phone",
+        "images": [
+          {
+            "src": "/projects/neu-link/app-home-dark.webp",
+            "alt": "NEU Link home screen with events and announcements",
+            "w": 645,
+            "h": 1398
+          },
+          {
+            "src": "/projects/neu-link/app-bus-route-dark.webp",
+            "alt": "Live bus route on the campus map",
+            "w": 645,
+            "h": 1398
+          },
+          {
+            "src": "/projects/neu-link/app-bus-schedule-light.webp",
+            "alt": "Bus timetable with the next departure highlighted",
+            "w": 645,
+            "h": 1398
+          },
+          {
+            "src": "/projects/neu-link/app-facilities-dark.webp",
+            "alt": "Sports facilities with directions and reservation",
+            "w": 645,
+            "h": 1398
+          },
+          {
+            "src": "/projects/neu-link/app-reservations-light.webp",
+            "alt": "Facility reservations calendar",
+            "w": 645,
+            "h": 1398
+          },
+          {
+            "src": "/projects/neu-link/app-access-dark.webp",
+            "alt": "Door access screen scanning for nearby doors",
+            "w": 645,
+            "h": 1398
+          },
+          {
+            "src": "/projects/neu-link/app-stats-dark.webp",
+            "alt": "Statistics by school, company and industry",
+            "w": 645,
+            "h": 1398
+          },
+          {
+            "src": "/projects/neu-link/app-map-light.webp",
+            "alt": "Campus map showing sport facilities",
+            "w": 645,
+            "h": 1398
+          },
+          {
+            "src": "/projects/neu-link/app-directory-dark.webp",
+            "alt": "Directory screen (names and photos blurred for privacy)",
+            "w": 645,
+            "h": 1398
+          }
+        ]
+      },
+      {
+        "title": "Web app",
+        "kind": "desktop",
+        "images": [
+          {
+            "src": "/projects/neu-link/web-map-buses.webp",
+            "alt": "Web campus map with bus routes",
+            "w": 1356,
+            "h": 1230
+          },
+          {
+            "src": "/projects/neu-link/web-facilities.webp",
+            "alt": "Web sports facility reservations",
+            "w": 1356,
+            "h": 1234
+          },
+          {
+            "src": "/projects/neu-link/web-stats.webp",
+            "alt": "Web statistics dashboard",
+            "w": 1356,
+            "h": 1218
+          },
+          {
+            "src": "/projects/neu-link/web-map-facilities.webp",
+            "alt": "Web campus map with sport facilities",
+            "w": 1356,
+            "h": 1233
+          },
+          {
+            "src": "/projects/neu-link/web-home.webp",
+            "alt": "Web home with events, announcements and index (other people blurred)",
+            "w": 1356,
+            "h": 1308
+          },
+          {
+            "src": "/projects/neu-link/web-directory.webp",
+            "alt": "Web directory (names and photos blurred for privacy)",
+            "w": 1356,
+            "h": 1313
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "punica",
+    "title": "Punica HR",
+    "tagline": "Enterprise HR platform",
+    "summary": "An enterprise HR platform with accessible, multilingual dashboards for people, tasks, partners, inventory and documents, built around secure API integrations and fast data visualisation.",
+    "tags": [
+      "Web",
+      "Dashboard",
+      "Accessibility"
+    ],
+    "year": "2025",
+    "role": "Fullstack Engineer",
+    "platforms": [
+      "Web"
+    ],
+    "techStack": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "REST APIs",
+      "i18n (EN / TR)",
+      "WCAG 2.2"
+    ],
+    "showcase": {
+      "type": "browsers",
+      "tint": "#8f1d1d",
+      "desktop": "/projects/punica/landing-hero.webp",
+      "secondary": "/projects/punica/dashboard-overview.webp"
+    },
+    "overview": "Punica brings HR and operations into one platform: the People module for HR management, Tasks for project and task tracking, plus Partners, Inventory and Documents. I built accessible, multilingual dashboards on top of secure API integrations, with widget-based home screens and data visualisation for organisational management.",
+    "highlights": [
+      {
+        "title": "Widget dashboards",
+        "text": "Configurable home screens with attendance clock-in, time requests, announcements, tasks, weekly hours and statistics widgets."
+      },
+      {
+        "title": "Accessible by default",
+        "text": "Dashboards built with accessibility in mind, following WCAG 2.2 and ARIA practices."
+      },
+      {
+        "title": "Multilingual",
+        "text": "English and Turkish throughout the product and marketing site."
+      },
+      {
+        "title": "Secure integrations",
+        "text": "Frontend built around secure API integrations and high-performance data visualisation."
+      }
+    ],
+    "gallery": [
+      {
+        "title": "Product",
+        "kind": "desktop",
+        "images": [
+          {
+            "src": "/projects/punica/dashboard-overview.webp",
+            "alt": "Punica dashboard with attendance, time requests and statistics widgets",
+            "w": 1600,
+            "h": 538
+          },
+          {
+            "src": "/projects/punica/dashboard-tasks.webp",
+            "alt": "Punica tasks dashboard with weekly hours and assigned tasks",
+            "w": 1600,
+            "h": 538
+          }
+        ]
+      },
+      {
+        "title": "Marketing site",
+        "kind": "desktop",
+        "images": [
+          {
+            "src": "/projects/punica/landing-hero.webp",
+            "alt": "Punica landing page hero",
+            "w": 1600,
+            "h": 824
+          },
+          {
+            "src": "/projects/punica/landing-products.webp",
+            "alt": "Punica products: People and Tasks",
+            "w": 1600,
+            "h": 824
+          },
+          {
+            "src": "/projects/punica/landing-modules.webp",
+            "alt": "Punica modules: Partners, Inventory, Docs and Calendar",
+            "w": 1600,
+            "h": 824
+          },
+          {
+            "src": "/projects/punica/landing-faq.webp",
+            "alt": "Punica FAQ section",
+            "w": 1600,
+            "h": 822
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "neu-smart-switch",
+    "title": "NEU Smart Switch",
+    "tagline": "IoT facility automation",
+    "summary": "A hardware-software system that switches sports facility lighting on and off from bookings, keeps working when the backend is down, and heals itself after a power cut.",
+    "tags": [
+      "IoT",
+      "Backend",
+      "Dashboard"
+    ],
+    "year": "2025",
+    "role": "Architect & Fullstack Engineer",
+    "platforms": [
+      "Web",
+      "Hardware"
+    ],
+    "techStack": [
+      "NestJS",
+      "Next.js",
+      "Shelly smart switches",
+      "Cron jobs",
+      "Static IP networking",
+      "VPS"
+    ],
+    "showcase": {
+      "type": "schematic",
+      "tint": "#6b1414"
+    },
+    "overview": "An independent IoT system with its own dashboard and user management (roles and permissions) that schedules and controls lighting in the university's sports facilities based on new bookings. The server runs on the same subnet as the Shelly switches so it can talk to each one directly over a dedicated static IP.",
+    "highlights": [
+      {
+        "title": "Booking-driven lighting",
+        "text": "New facility bookings automatically schedule the lights for that slot, managed from a dashboard with roles and permissions."
+      },
+      {
+        "title": "Survives backend outages",
+        "text": "A steady cron payload from the NEU server is persisted locally, so the switches keep their schedule even when the backend is unreachable."
+      },
+      {
+        "title": "Self-healing after power cuts",
+        "text": "A custom reboot script in the Shelly firmware pings the Smart Switch server when power returns, then validates and restores the correct state immediately."
+      },
+      {
+        "title": "Direct device networking",
+        "text": "The VPS shares a subnet with the switches, reaching each device on its own static IP."
+      }
+    ],
+    "gallery": [],
+    "note": "Dashboard screenshots coming soon. The system runs on the campus network."
   }
 ]
