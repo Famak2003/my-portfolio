@@ -2,7 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Theme is controlled by the `dark` class on <html> (see layout.tsx + NavBar toggle). */
+/* The site is dark-only: <html> always has the `dark` class (see layout.tsx). */
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: #0a0a0b;
+  /* soft top light + vignette so the black isn't flat */
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255, 255, 255, 0.06), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 50% 110%, rgba(224, 36, 36, 0.05), transparent 70%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(224, 36, 36, 0.35);
+  color: #fff;
+}
+
+/* Film grain over the whole page. The noise is an inline SVG, so no image request. */
+.grain {
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain-shift 1s steps(4) infinite;
+}
+
+@keyframes grain-shift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-3%, 2%); }
+  50% { transform: translate(2%, -3%); }
+  75% { transform: translate(-2%, -1%); }
+  100% { transform: translate(0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain { animation: none; }
+}
 
 .card {
   position: relative;
@@ -89,5 +139,13 @@
   }
   .cardIcon{
     @apply w-[40px]
+  }
+  /* Small uppercase monospace label used across the redesign */
+  .mono-label{
+    @apply font-mono text-[11px] sm:text-[12px] uppercase tracking-[0.14em]
+  }
+  /* Centered content column */
+  .container-x{
+    @apply w-full max-w-[1280px] mx-auto px-5 sm:px-8
   }
 }

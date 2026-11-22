@@ -42,3 +42,6 @@ next-env.d.ts
 
 # claude code
 .claude/
+
+# raw project screenshots (optimised copies live in public/projects)
+data/project-ss/

@@ -1,8 +1,6 @@
-"use client"
 import Card from "./components/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDatabase, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
-import { useRef } from "react";
 import Hero from "./components/Hero";
 import NextJsIcon from "@/public/svg/NextJsIcon";
 import NestJsIcon from "@/public/svg/NestJsIcon";
@@ -10,13 +8,6 @@ import SequeliseIcon from "@/public/svg/SequeliseIcon";
 
 export default function Page() {
     
-    const techStackRef = useRef<HTMLDivElement>(null);
-    const handleScrollToTechStack = () => {
-        techStackRef?.current?.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start' // Aligns the section to the top of the viewport
-            });
-    }
 
 
 
@@ -84,9 +75,9 @@ export default function Page() {
 ];
 
   return (
-        <main className=" flex flex-col gap-10 items-center bg-transparent text-black dark:text-textGray min-h-[100dvh] h-fit w-full ">
-            <Hero handleScrollToTechStack={handleScrollToTechStack}/>
-            <div ref={techStackRef} id="tech-stack" className=" scroll-mt-[100px] flex flex-col justify-center items-center gap-5 py-14 section w-full bg-bgBlack ">
+        <main className=" flex flex-col gap-10 items-center text-textGray min-h-[100dvh] h-fit w-full ">
+            <Hero />
+            <div id="tech-stack" className=" scroll-mt-[80px] flex flex-col justify-center items-center gap-5 py-14 section w-full bg-bgBlack ">
                 <h2 className=" text-[34px] mobile:text-[48px] font-bold text-accent dark:text-brightRed "> Arsenal Wall </h2>
                 <ul className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-items-center gap-x-10 gap-y-10 gap-10 w-full max-w-5xl ">
                     {

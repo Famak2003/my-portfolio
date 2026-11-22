@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config as faConfig } from "@fortawesome/fontawesome-svg-core";
 import "./globals.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { Toaster } from "react-hot-toast";
+import { site } from "@/data/site";
+
+// FontAwesome's CSS is imported above, so stop it injecting a copy at runtime
+// (which never happens for server-rendered icons and leaves them unstyled).
+faConfig.autoAddCss = false;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,8 +23,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Famak Dev",
-  description: "Welcome to my portfolio website, a portal to my craft",
+  title: `${site.name} | ${site.title}`,
+  description: "Fullstack software engineer building web, mobile and IoT products with React, Next.js, React Native and NestJS.",
 };
 
 export default function RootLayout({
@@ -26,28 +33,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // suppressHydrationWarning: the theme script below adds the `dark` class before React hydrates
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `try{if(localStorage.getItem('dark-mode')==='true')document.documentElement.classList.add('dark')}catch(e){}`,
-          }}
-        />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans bg-[#faeaea] dark:bg-black text-black dark:text-textGray`}
-        style={{
-            "backgroundImage": ` radial-gradient(circle at 20% 20%, rgb(116, 116, 116) .8px, transparent .5px) `, 
-            "backgroundSize": "50px 50px"
-        }}
-      >
-        <Toaster position="bottom-center" />
-        <div className=" relative flex flex-col gap-12 w-full h-fit bg-transparent ">
-          <div className=" w-full h-[65px] mobile:h-[75px] sm:h-[87px] " ></div>
-          <NavBar/>
+    // Dark-only site: the `dark` class is always on so existing `dark:` styles apply.
+    <html lang="en" className="dark">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans bg-ink text-fg`}>
+        <div aria-hidden className="grain" />
+        <Toaster position="bottom-center" toastOptions={{ style: { background: '#18181b', color: '#ededef', border: '1px solid rgba(255,255,255,0.09)' } }} />
+        <NavBar />
+        <div className=" relative flex flex-col gap-12 w-full h-fit pt-16 ">
           {children}
-          <Footer/>
+          <Footer />
         </div>
       </body>
     </html>

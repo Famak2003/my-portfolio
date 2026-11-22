@@ -56,7 +56,7 @@ const Footer = () => {
                             <Image className=" object-cover h-full w-full " width={145} height={145} alt="Famakinde Oluwapelumi" src="/me1.png" />
                         </figure>
                         <p className=" text-[18px] xxl:text-[20px] text-center lmobile:text-start ">
-                            Passionate Software Developer
+                            Fullstack Software Engineer
                         </p>
                     </div>
                     <div className=" w-[50%] grid grid-cols-1 md:grid-cols-2 gap-5 place-items-stretch ">

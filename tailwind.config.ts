@@ -20,6 +20,14 @@ export default {
         "smobile": "350px"
       },
       colors: {
+        // --- redesign tokens (dark "control panel" theme) ---
+        ink: '#0a0a0b',          // page background
+        panel: '#111113',        // framed panels
+        raised: '#18181b',       // chips, inputs
+        line: 'rgba(255, 255, 255, 0.09)', // hairlines and frames
+        fg: '#ededef',           // main text
+        muted: '#8b8b93',        // secondary text
+        // --- legacy tokens (still used by pages not yet restyled) ---
         background: '#e5e7eb',
         bgBlack: '#141414',
         // Swapped Yellows for Reds/Crimsons
@@ -39,20 +47,13 @@ export default {
         'footerButton': 'linear-gradient(to bottom, #f8b4b4 0%, #771d1d 2%, #cc0025 100%)'
       },
       fontFamily: {
-        sans: [
-          'ui-sans-serif',
-          'system-ui',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"Segoe UI"',
-          'Roboto',
-          '"Helvetica Neue"',
-          'Arial',
-          '"Noto Sans"',
-          'sans-serif',
-        ],
+        sans: ['var(--font-geist-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-geist-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       keyframes: {
+        blink: {
+          to: { visibility: 'hidden' },
+        },
         // Updated shadow pulses to use Red (RGBA 155, 28, 28)
         shadowPulse: {
           '0%, 100%': {
@@ -72,11 +73,14 @@ export default {
         },
       },
       animation: {
+        'blink': 'blink 1.2s steps(2, start) infinite',
         'shadow-pulse': 'shadowPulse 5s ease-in-out infinite',
         'icon-shadow-pulse': 'iconShadowPulse 2.5s ease-in-out infinite'
       },
     },
   },
   plugins: [],
+  // The site is dark-only: <html> always carries the `dark` class (see layout.tsx),
+  // so existing `dark:` styles on pages not yet restyled still apply.
   darkMode: 'class',
 } satisfies Config;

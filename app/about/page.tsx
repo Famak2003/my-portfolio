@@ -3,10 +3,11 @@ import Image from "next/image"
 import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight, faCode, faMobileAlt, faServer } from "@fortawesome/free-solid-svg-icons"
+import { site, yearsOfExperience } from "@/data/site"
 
 export const metadata: Metadata = {
     title: "About | Famak Dev",
-    description: "About Famakinde Oluwapelumi, Senior Frontend Engineer & Mobile Developer.",
+    description: "About Famakinde Oluwapelumi, Fullstack Software Engineer (Mobile, Web).",
 }
 
 const focusAreas = [
@@ -18,19 +19,19 @@ const focusAreas = [
     {
         icon: faMobileAlt,
         title: "Mobile",
-        text: "Cross-platform apps with React Native that feel native on both iOS and Android.",
+        text: "React Native apps shipped to the App Store and Google Play, with push notifications, iOS Live Activities and native-feeling navigation.",
     },
     {
         icon: faServer,
         title: "Backend",
-        text: "REST APIs and services with Node.js, Express and NestJS, backed by MySQL and Sequelize.",
+        text: "REST APIs, WebSockets and NestJS services backed by MySQL, deployed on VPS with Nginx, PM2 and Cloudflare, plus IoT integrations with Shelly smart switches.",
     },
 ]
 
 const stats = [
-    { value: "4+", label: "Years experience" },
-    { value: "100+", label: "Projects completed" },
-    { value: "24/7", label: "Availability" },
+    { value: `${yearsOfExperience()}+`, label: "Years experience" },
+    { value: "iOS · Android · Web", label: "Platforms shipped" },
+    { value: "WCAG 2.2", label: "Accessibility standard" },
 ]
 
 const About = () => {
@@ -44,15 +45,17 @@ const About = () => {
                     <div className=" flex flex-col gap-5 ">
                         <h1 className=" letterSpacing text-primary dark:text-brightRed ">ABOUT ME</h1>
                         <p className=" largeText ">Famakinde Oluwapelumi</p>
-                        <p className=" text-[18px] tracking-widest ">Senior Frontend Engineer & Mobile Developer</p>
+                        <p className=" text-[18px] tracking-widest ">{site.title} | {site.titleDetail}</p>
                         <p className=" text-[16px] sm:text-[18px] leading-relaxed ">
-                            I&apos;m a software developer with over four years of experience turning ideas into
-                            polished web and mobile products. I care about clean architecture, smooth user
-                            experiences, and code that the next developer will enjoy working with.
+                            I&apos;m a software engineer with {yearsOfExperience()}+ years of experience building
+                            scalable fullstack, web and mobile applications for international production
+                            environments, with React, Next.js and React Native on the front and Node.js and
+                            NestJS on the back.
                         </p>
                         <p className=" text-[16px] sm:text-[18px] leading-relaxed ">
-                            Most of my work sits on the frontend, but I&apos;m comfortable across the stack,
-                            from designing the interface to building the API and database behind it.
+                            I own the full lifecycle, from database design and DevOps to App Store releases,
+                            and I build to WCAG 2.2 accessibility standards. Lately I&apos;ve been expanding into
+                            hardware, building fault-tolerant IoT systems for real-time facility automation.
                         </p>
                     </div>
                 </section>
@@ -61,7 +64,7 @@ const About = () => {
                     {
                         stats.map((stat) => (
                             <div key={stat.label} className=" flex flex-col items-center gap-1 p-6 rounded-2xl bg-bgBlack text-white ">
-                                <span className=" text-[36px] font-bold text-brightRed ">{stat.value}</span>
+                                <span className=" text-[26px] sm:text-[30px] font-bold text-brightRed text-center ">{stat.value}</span>
                                 <span className=" text-[14px] tracking-widest text-textGray uppercase ">{stat.label}</span>
                             </div>
                         ))
