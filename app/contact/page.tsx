@@ -45,7 +45,7 @@ const Contact = () => {
             },
             (error) => {
                 console.error('FAILED...', error.text);
-                toast.error('Failed to send message. This maybe due to netowrk, try again please.');
+                toast.error('Failed to send message. This may be due to a network issue, please try again.');
                 setSubmitting(false)
             },
         );
@@ -53,26 +53,27 @@ const Contact = () => {
 
     return(
         <div className=" section ">
-            <div className=" grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-5 w-full p-10 bg-bgBlack rounded-2xl min-h-[584px] " >
+            <div className=" grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-5 w-full p-6 sm:p-10 bg-bgBlack text-white dark:text-textGray rounded-2xl min-h-[584px] " >
                 <div className=" flex flex-col gap-5 justify-between items-start ">
                     <h1 className=" letterSpacing "> CONTACT </h1>
                     <figure className=" w-[160px] md:w-[223px] h-[160px] md:h-[223px] rounded-full overflow-hidden ring-1 ring-primary ">
-                        <Image className=" w-full h-full " width={223} height={223} src={'/me3.png'} alt="Famakinde" />
+                        <Image className=" w-full h-full object-cover " width={223} height={223} src={'/me3.png'} alt="Famakinde" />
                     </figure>
                 </div>
                 <div className=" flex flex-col gap-3 ">
                     <h2 className=" largeText ">
-                        Let's Collaborate
+                        Let&apos;s Collaborate
                     </h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque quidem magni reiciendis suscipit sapiente similique fugit sit, cupiditate quod nulla, corrupti enim ipsum doloribus porro facilis, eius corporis harum ex.
-                    Impedit esse. </p>
+                    <p>
+                        Have a project in mind, a role to fill, or just want to say hello? Send me a message
+                        and I&apos;ll get back to you as soon as I can.
+                    </p>
                     <form ref={form} onSubmit={(e) => handleSubmit(e)} className=" flex flex-col gap-2 ">
                         <input className=" p-2 bg-textGray text-white placeholder:text-white outline-none w-full h-[52.4px] rounded-xl " name="subject" placeholder="Subject" type="text" />
                         <input className=" p-2 bg-textGray text-white placeholder:text-white outline-none w-full h-[52.4px] rounded-xl " name="user_name" placeholder="Name" type="text" />
                         <input className=" p-2 bg-textGray text-white placeholder:text-white outline-none w-full h-[52.4px] rounded-xl " name="user_email" placeholder="Email" type="email" />
-                        <textarea className=" p-2 bg-textGray text-white placeholder:text-white outline-none w-full h-[100px] rounded-xl " name="message" placeholder=" message " />
-                        {/* <FontAwesomeIcon className=" animate-spin duration-300 bg-black rounded-3xl text-2xl " icon={faStroopwafel}/> */}
-                        <button className=" bg-primary w-full h-[52.4px] rounded-xl " type="submit" >
+                        <textarea className=" p-2 bg-textGray text-white placeholder:text-white outline-none w-full h-[100px] rounded-xl " name="message" placeholder="Message" />
+                        <button className=" bg-primary hover:bg-secondary disabled:opacity-70 w-full h-[52.4px] rounded-xl transition-colors " type="submit" disabled={submitting} >
                             {
                                 submitting ? (
                                     <FontAwesomeIcon className=" animate-spin rounded-3xl text-2xl " icon={faSpinner}/>

@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "social-media-app",
+    "title": "Designing a Social Media App for the Black Experience",
+    "summary": "A community-first social platform focused on culture, creators and conversation.",
+    "year": "2020/2021",
+    "role": "Fullstack Dev",
+    "techStack": ["JavaScript", "React JS", "Next JS"],
+    "coverImage": "/fire.jpeg",
+    "description": "Placeholder: describe the problem this project solved, who it was for, and what your role in it was. Replace this entry in data/projects.json with your real project details.",
+    "solutions": "Placeholder: explain the key decisions you made, the architecture you chose, and the results you achieved.",
+    "gallery": ["/me1.png", "/me2.png", "/me3.png", "/nice.avif", "/pic.jpg", "/bike.jpg"]
+  }
+]

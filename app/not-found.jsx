@@ -1,5 +1,3 @@
-'use client'
-
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
@@ -15,7 +13,7 @@ const NotFound = () => {
             <p className=" text-[14px] sm:text-[18px] tracking-[2px] mb-3 text-center ">
                 The link might be broken or the page has been moved
             </p>
-            <Link href={'/'} className=" flex gap-2 sm:gap-4 items-center bg-bgBlack ring-1 ring-white py-2 px-8 rounded-2xl ">
+            <Link href={'/'} className=" flex gap-2 sm:gap-4 items-center bg-bgBlack text-white ring-1 ring-white hover:ring-brightRed py-2 px-8 rounded-2xl ">
                 <FontAwesomeIcon className=" text-[20px] " icon={faArrowLeft} />
                 <p className=" button ">Back to Homepage</p>
             </Link>

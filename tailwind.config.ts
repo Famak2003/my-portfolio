@@ -22,7 +22,6 @@ export default {
       colors: {
         background: '#e5e7eb',
         bgBlack: '#141414',
-        foreground: "var(--foreground)",
         // Swapped Yellows for Reds/Crimsons
         accent: '#9b1c1c',       // Muted deep red accent
         card: '#1f1f1f',
@@ -37,7 +36,7 @@ export default {
         avatar_shadow: '0px 5px 15px rgba(31, 31, 31, 0.12)',
       },
       backgroundImage:{
-        'footerButton': 'linear-gradient(to bottom, white 0%, #b38100 2%, #d4af37 100%)'
+        'footerButton': 'linear-gradient(to bottom, #f8b4b4 0%, #771d1d 2%, #cc0025 100%)'
       },
       fontFamily: {
         sans: [
@@ -79,5 +78,5 @@ export default {
     },
   },
   plugins: [],
-  // darkMode: 'class'
+  darkMode: 'class',
 } satisfies Config;

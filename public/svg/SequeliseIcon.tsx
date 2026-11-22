@@ -3,7 +3,7 @@ import React from 'react'
 export default function Sequelise() {
   return (
     <svg version="1.1" viewBox="0 0 90.688 104.58" xmlns="http://www.w3.org/2000/svg">
-        <g transform="matrix(.035278 0 0 -.035278 0 104.58)" fill-rule="evenodd">
+        <g transform="matrix(.035278 0 0 -.035278 0 104.58)" fillRule="evenodd">
         <path d="m1285.3 2534.2 917.7-522.1 367.64 212.27-1282 740.14-1288.4-740.14 367.64-212.27 917.37 522.1" fill="#52b0e7"/>
         <path d="m6.707 2220.4 370.97-214.16v-1059.7l907.66-524.19v-420.43l-1285.3 738.21 6.707 1480.3" fill="#3c76c3"/>
         <path d="m929.73 1687.8 357.32-206.29v-420.38l-185.3 107.08-171.95 99.28-0.067 420.31" fill="#2e9d4d"/>
