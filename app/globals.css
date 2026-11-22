@@ -101,4 +101,10 @@ body {
   .largeText{
     @apply text-[45px] mobile:text-[55px] lg:text-[65px] leading-[55px] lg:leading-[70px]
   }
+  .button{
+    @apply text-[12px] sm:text-[16px] text-center
+  }
+  .cardIcon{
+    @apply w-[40px]
+  }
 }

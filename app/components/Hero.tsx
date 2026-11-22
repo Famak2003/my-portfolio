@@ -1,15 +1,16 @@
 import { faArrowDownShortWide, faBullseye, faShield, faThunderstorm } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const Hero = () => {
+const Hero:React.FC<{handleScrollToTechStack: () => void}> = ({handleScrollToTechStack}) => {
     return(
         <div 
-            className=" relative flex justify-center items-center gap-3 w-full h-fit mobile:h-[calc(100dvh-75px)] sm:h-[calc(100dvh-135px)] section sm:pt-[120px] bg-transparent "                
+            className="  relative flex justify-center items-center gap-3 w-full h-fit mobile:h-[calc(100dvh-75px)] sm:h-[calc(100dvh-135px)] section sm:pt-[50px] bg-transparent "                
         >
-            <div className="  flex flex-col items-center gap-8 w-fit h-full">
+            <div className="   flex flex-col items-center gap-8 w-fit h-full">
                 <div className=" relative w-fit h-fit p-2 ring-2 ring-accent shadow-md animate-shadow-pulse rounded-full ">
-                    <div className=" flex justify-center items-center rounded-full h-40 aspect-square bg-card bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/30 ">
-                        <FontAwesomeIcon className=" text-[156px] text-textGray " icon={faShield} />
+                    <div className=" flex justify-center items-center overflow-hidden h-[350px] w-[350px] rounded-full aspect-square bg-card bg-gradient-to-br from-primary/1 to-primary/5 border-2 border-primary/30 ">
+                        {/* <FontAwesomeIcon className=" text-[156px] text-textGray " icon={faShield} /> */}
+                        <img className={"h-full w-full object-cover object-top grayscale-[20%] hover:grayscale-0 transition-all duration-500 "} src={'./prof-pic1.jpg'} />
                     </div>
                     <span className="absolute -top-2 -right-2 w-6 h-6 bg-primary rounded-full animate-pulse"/>
                     <span className=" absolute -bottom-2 -left-2 w-4 h-4 bg-primary/60 rounded-full animate-pulse duration-300 "/>
@@ -21,8 +22,8 @@ const Hero = () => {
                     </h1>
                     <div className=" flex gap-4 items-center justify-center w-full mb-[38px] ">
                         <hr className=" border-primary border-t-[1px] w-[55px] "/>
-                        <p className=" text-[18px] sm:text-[20px] tracking-widest text-center">
-                            PROFESSIONAL DEVELOPER
+                        <p className=" text-[14px] mobile:text-[18px] sm:text-[20px] tracking-widest text-center">
+                            Senior Frontend Engineer & Mobile Developer
                         </p>
                         <hr className=" border-primary border-t-[1px] w-[55px] "/>
                     </div>
@@ -70,15 +71,18 @@ const Hero = () => {
                         </li>
                     </ul>
                 </div>
-                <button className=" flex gap-2 justify-center items-center text-black font-semibold w-[228px] h-[48px] rounded-lg bg-secondary ">
-                    <p className=" text-[18px] ">
-                        VIEW ARSENAL
+                <button 
+                    // href="#tech-stack" 
+                    onClick={handleScrollToTechStack}
+                    className=" flex gap-2 justify-center items-center text-black font-semibold w-[228px] h-[48px] rounded-lg bg-secondary ">
+                    <p className=" text-[16px] text-white ">
+                        VIEW MY TECH STACK
                     </p>
                     <span className=" heroIcon ">
-                        <FontAwesomeIcon className=" text-[20px] w-full h-full " icon={faArrowDownShortWide} />
+                        <FontAwesomeIcon className=" text-[20px] w-full h-full text-white " icon={faArrowDownShortWide} />
                     </span>
                 </button>
-                <div className=" absolute bottom-10 left-[50%] translate-x-[-50%] hidden mobile:flex justify-center items-start rounded-3xl w-[20px] mobile:w-[24px] h-[35px] mobile:h-[40px] ring-2 ring-secondary dark:ring-secondary/30 animate-bounce ">
+                <div className=" absolute bottom-0 left-[50%] translate-x-[-50%] hidden mobile:flex justify-center items-start rounded-3xl w-[20px] mobile:w-[24px] h-[35px] mobile:h-[40px] ring-2 ring-secondary dark:ring-secondary/30 animate-bounce ">
                     <span className=" mt-2 w-[4px] h-[12px] rounded-3xl bg-secondary animate-pulse "/>
                 </div>
             </div>

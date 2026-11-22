@@ -23,13 +23,14 @@ export default {
         background: '#e5e7eb',
         bgBlack: '#141414',
         foreground: "var(--foreground)",
-        accent: '#d4af37',
+        // Swapped Yellows for Reds/Crimsons
+        accent: '#9b1c1c',       // Muted deep red accent
         card: '#1f1f1f',
         lightGray: '#BCBCC2',
         textGray: '#A6A6A6',
-        brightYellow: '#f2ce31',
-        primary: '#b38100',
-        secondary: '#D6A100',
+        brightRed: '#e02424',    // Softer, brighter red for hover states
+        primary: '#771d1d',      // Deep crimson
+        secondary: '#9b1c1c',    // Medium red
         deepRed: '#cc0025'
       },
       boxShadow:{
@@ -53,25 +54,26 @@ export default {
         ],
       },
       keyframes: {
+        // Updated shadow pulses to use Red (RGBA 155, 28, 28)
         shadowPulse: {
           '0%, 100%': {
-            boxShadow: '0 0 0 0 rgba(212, 175, 55, 0.5)',
+            boxShadow: '0 0 0 0 rgba(155, 28, 28, 0.5)',
           },
           '50%': {
-            boxShadow: '0 0 15px 5px rgba(212, 175, 55, 0.7)',
+            boxShadow: '0 0 30px 1px rgba(155, 28, 28, 0.7)',
           },
         },
         iconShadowPulse: {
           '0%, 100%': {
-            boxShadow: '0 0 20px 1px rgba(212, 175, 55, 0.5)',
+            boxShadow: '0 0 20px 1px rgba(155, 28, 28, 0.5)',
           },
           '50%': {
-            boxShadow: '0 0 15px 5px rgba(212, 175, 55, 0.7)',
+            boxShadow: '0 0 15px .5px rgba(155, 28, 28, 0.7)',
           },
         },
       },
       animation: {
-        'shadow-pulse': 'shadowPulse 2s ease-in-out infinite',
+        'shadow-pulse': 'shadowPulse 5s ease-in-out infinite',
         'icon-shadow-pulse': 'iconShadowPulse 2.5s ease-in-out infinite'
       },
     },

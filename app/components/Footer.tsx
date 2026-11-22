@@ -12,40 +12,32 @@ const Footer = () => {
             children: [
                 {
                     title: 'Frontend Development',
-                    link: 'https://oluwatobioluwole.nousdynasty.com/'
                 },
                 {
                     title: 'UI/UX',
-                    link: 'https://oluwatobioluwole.nousdynasty.com/'
                 },
                 {
                     title: 'Backend/API Development',
-                    link: 'https://oluwatobioluwole.nousdynasty.com/'
                 },
                 {
                     title: 'Fullstack Development',
-                    link: 'https://oluwatobioluwole.nousdynasty.com/'
                 },
                 {
                     title: 'DevOps & Deployment',
-                    link: 'https://oluwatobioluwole.nousdynasty.com/'
                 },
                 {
                     title: 'Payment Gateway Integration',
-                    link: 'https://oluwatobioluwole.nousdynasty.com/'
                 },
                 {
                     title: 'CSM Development',
-                    link: 'https://oluwatobioluwole.nousdynasty.com/'
                 },
                 {
                     title: 'Custom Admin Dashboard System Development',
-                    link: 'https://oluwatobioluwole.nousdynasty.com/'
                 },
             ],        
         },
         {
-            header: 'Social Media',
+            header: 'Socials',
             children: [
                 {
                     title: "Linkedin",
@@ -53,6 +45,40 @@ const Footer = () => {
                 }
             ]
         }
+    ]
+
+    const socials = [
+        {
+            title: "Linkedin",
+            link: "https://www.linkedin.com/in/oluwapelumi-famakinde-a138ab239/"
+        }
+    ]
+
+    const services = [
+        {
+            title: 'Frontend Development',
+        },
+        {
+            title: 'UI/UX',
+        },
+        {
+            title: 'Backend/API Development',
+        },
+        {
+            title: 'Fullstack Development',
+        },
+        {
+            title: 'DevOps & Deployment',
+        },
+        {
+            title: 'Payment Gateway Integration',
+        },
+        {
+            title: 'CSM Development',
+        },
+        {
+            title: 'Custom Admin Dashboard System Development',
+        },
     ]
 
 
@@ -63,9 +89,13 @@ const Footer = () => {
                     <h1 className=" flex largeText w-full text-center max-w-[400px] xxl:max-w-[600px] xxl:text-[90px]">
                         Have a cool project?
                     </h1>
-                    <button className=" flex justify-center gap-4 w-[193px] bg-footerButton p-2 rounded-3xl ">
-                        <p className=" text-[18px] text-white ">contact Me</p>
-                        <span className=" flex justify-center items-center h-[32px] aspect-square bg-white rounded-full "><FontAwesomeIcon className=" text-primary text-[12px] sm:text-[16px] " icon={faArrowRight} /></span>
+                    <button className=" flex justify-center items-center gap-4 bg-footerButton py-2 px-6 sm:px-9 rounded-3xl ">
+                        <p className=" button text-white ">contact Me</p>
+                        <span 
+                            className=" flex justify-center items-center h-[20px] sm:h-[32px] aspect-square bg-white rounded-full "
+                        >
+                            <FontAwesomeIcon className=" text-primary text-[12px] sm:text-[16px] " icon={faArrowRight} />
+                        </span>
                     </button>
                 </div>
                 <hr className=" w-full border-t-[1px] border-[#45455D] " />
@@ -89,15 +119,15 @@ const Footer = () => {
                                                 return(
                                                     <>
                                                         { 
-                                                            obj?.header === 'Services' ? (
-                                                                <Link href={item?.link} className=" text-center lmobile:text-start text-textGray text-[14px] lg:text-[16px] ">
-                                                                    {item?.title}
-                                                                </Link>
-                                                            ) : 
-                                                            (
-                                                                <a className=" text-center lmobile:text-start text-textGray text-[14px] lg:text-[16px] " href={item?.link} target="_blank" >
+                                                            obj?.header === 'Socials' ? (
+                                                                <a key={index} className=" text-center lmobile:text-start text-textGray text-[14px] lg:text-[16px] " href={item?.link} target="_blank" >
                                                                     {item?.title}
                                                                 </a>
+                                                            ) : 
+                                                            (
+                                                               <p key={index} className=" text-center lmobile:text-start text-textGray text-[14px] lg:text-[16px] ">
+                                                                    {item?.title}
+                                                                </p>
                                                             )
                                                         }
                                                     </>
