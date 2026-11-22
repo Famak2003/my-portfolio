@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react"
-import { site, yearsOfExperience } from "@/data/site"
+import { site, experience } from "@/data/site"
 
 /** Live local time in Nicosia, ticking every second. Renders a placeholder until mounted. */
 const LocalTime = () => {
@@ -39,7 +39,7 @@ const Cell = ({ label, children, note, noteCls = "text-emerald-400", className =
 /** Bottom bar of the hero, styled like a market ticker but with my own "live data". */
 const Ticker = () => (
     <div className=" grid grid-cols-2 lg:grid-cols-4 border-t border-line bg-ink/70 backdrop-blur-sm ">
-        <Cell label="Experience" note={`▲ since ${site.careerStart.getFullYear()}`}>{yearsOfExperience()}+ yrs</Cell>
+        <Cell label="Experience" note={`▲ since ${site.careerStart.getFullYear()}`}>{experience().short}</Cell>
         <Cell label="Now" className="border-l">{site.currentRole} @ {site.currentCompany}</Cell>
         <Cell label="Shipping to" note="● live" noteCls="text-brightRed" className="border-t lg:border-t-0 lg:border-l">iOS · Android · Web</Cell>
         <Cell label={site.location} className="border-l border-t lg:border-t-0"><LocalTime /></Cell>

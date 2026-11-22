@@ -80,7 +80,7 @@ story.append(Paragraph(
 # --- Profile --------------------------------------------------------------
 story.append(Paragraph("PROFESSIONAL PROFILE", h1))
 story.append(Paragraph(
-    "Highly analytical Software Engineer with 3+ years of experience architecting scalable "
+    "Highly analytical Software Engineer with nearly 3 years of experience architecting scalable "
     "fullstack, web, and mobile applications for international production environments. Expert in "
     "React, Next.js, and React Native, backed by a strong foundation in Node.js and NestJS "
     "backend development. Proven track record of delivering cross-platform solutions that work "

@@ -10,9 +10,9 @@ export const site = {
     timeZone: "Europe/Nicosia",
     currentRole: "Full-Stack & Mobile Engineer",
     currentCompany: "Punica",
-    // First professional role started July 2023. That role is no longer listed on the site
-    // or CV, but it still counts towards years of experience.
-    careerStart: new Date("2023-07-01"),
+    // Start of the earliest role listed on the site and CV (Gunsel, March 2024), so the
+    // experience figure always matches what someone gets by adding up the listed dates.
+    careerStart: new Date("2024-03-01"),
     cv: {
         href: "/cv/Famakinde-Oluwapelumi-CV.pdf",
         fileName: "Famakinde-Oluwapelumi-CV.pdf",
@@ -23,8 +23,21 @@ export const site = {
     },
 }
 
-/** Whole years since the first professional role, e.g. 3 for "3+ years". */
-export const yearsOfExperience = (now = new Date()) => {
-    const ms = now.getTime() - site.careerStart.getTime()
-    return Math.max(1, Math.floor(ms / (365.25 * 24 * 60 * 60 * 1000)))
+/**
+ * Experience as people would describe it from the listed dates:
+ * under half a year past a full year reads "3+ years", more than that reads "nearly 4 years".
+ * Updates itself over time (e.g. "nearly 3 years" until March 2027, then "3+ years").
+ */
+export const experience = (now = new Date()) => {
+    const start = site.careerStart
+    const months = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth())
+    const years = Math.floor(months / 12)
+    const nearly = months % 12 >= 6
+    const n = nearly ? years + 1 : Math.max(1, years)
+    return {
+        /** e.g. "nearly 3 years" / "3+ years" */
+        long: nearly ? `nearly ${n} years` : `${n}+ years`,
+        /** e.g. "Nearly 3 yrs" / "3+ yrs" */
+        short: nearly ? `Nearly ${n} yrs` : `${n}+ yrs`,
+    }
 }

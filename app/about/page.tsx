@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCode, faMobileAlt, faServer } from "@fortawesome/free-solid-svg-icons"
 import Columns from "../components/home/Columns"
 import { BracketLink, Corners } from "../components/ui/Bracket"
-import { site, yearsOfExperience } from "@/data/site"
+import { site, experience } from "@/data/site"
 
 export const metadata: Metadata = {
     title: `About | ${site.name}`,
@@ -31,7 +31,7 @@ const focusAreas = [
 
 const About = () => {
     const stats = [
-        { value: `${yearsOfExperience()}+ years`, label: "Experience" },
+        { value: experience().short.replace("yrs", "years"), label: "Experience" },
         { value: "iOS · Android · Web", label: "Platforms shipped" },
         { value: "WCAG 2.2", label: "Accessibility standard" },
     ]
@@ -51,7 +51,7 @@ const About = () => {
                         <p className=" largeText font-semibold text-fg ">{site.name}</p>
                         <p className=" mono-label text-muted ">{site.title} <span className=" text-white/25 ">/</span> {site.titleDetail}</p>
                         <p className=" text-[16px] leading-relaxed text-fg/90 sm:text-[18px] ">
-                            I&apos;m a software engineer with {yearsOfExperience()}+ years of experience building
+                            I&apos;m a software engineer with {experience().long} of experience building
                             scalable fullstack, web and mobile applications for international production
                             environments, with React, Next.js and React Native on the front and Node.js and
                             NestJS on the back.
