@@ -39,10 +39,12 @@ const TechOrbit = () => {
         const measure = () => {
             const { width, height } = wrap.getBoundingClientRect()
             const small = width < 640
+            // The ring spans the whole hero, edge to edge. Coins grow with the screen
+            // (about 100px at 1440 wide, 120px+ on big monitors).
             // On phones the ring hugs the screen edges and fades back so the copy stays readable.
-            chip = small ? 46 : width < 1024 ? 70 : 84
-            rx = Math.min(width * (small ? 0.5 : 0.42), 640)
-            ry = Math.min(height * (small ? 0.44 : 0.34), 320)
+            chip = small ? 46 : Math.round(Math.min(132, Math.max(72, Math.min(width, height * 1.6) * 0.075)))
+            rx = width * (small ? 0.5 : 0.44)
+            ry = height * (small ? 0.44 : 0.41)
             fade = small ? 0.5 : 1
             chipRefs.current.forEach((el) => {
                 if (el) { el.style.width = `${chip}px`; el.style.height = `${chip}px` }

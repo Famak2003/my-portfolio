@@ -58,7 +58,7 @@ const NavBar = () => {
 
     return (
         <header className=" fixed inset-x-0 top-0 z-50 border-b border-line bg-ink/70 backdrop-blur-md ">
-            <nav aria-label="Main" className=" container-x flex h-16 items-center justify-between ">
+            <nav aria-label="Main" className=" flex h-16 w-full items-center justify-between px-5 sm:px-8 ">
                 <Link href="/" className=" flex items-center gap-3 " aria-label="Home">
                     <Image width={28} height={28} src="/mylogo-transparent.png" alt="" priority />
                     <span className=" mono-label text-fg ">{site.shortName}</span>
@@ -81,7 +81,7 @@ const NavBar = () => {
 
             {open && (
                 <div id="mobile-menu" className=" md:hidden border-t border-line bg-ink/95 ">
-                    <div className=" container-x flex flex-col items-start gap-5 py-6 ">
+                    <div className=" flex flex-col items-start gap-5 px-5 sm:px-8 py-6 ">
                         {links}
                     </div>
                 </div>

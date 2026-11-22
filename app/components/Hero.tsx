@@ -14,11 +14,11 @@ const Cross = ({ className }: { className: string }) => (
 
 const Hero = () => {
     return (
-        <section aria-label="Introduction" className=" relative isolate flex flex-col h-[calc(100svh-64px)] min-h-[600px] max-h-[1000px] overflow-hidden border-b border-line ">
-            {/* faint vertical guides at the content edges */}
-            <div aria-hidden className=" pointer-events-none absolute inset-0 container-x ">
-                <div className=" h-full border-x border-white/[0.04] " />
-            </div>
+        <section aria-label="Introduction" className=" relative isolate flex w-full flex-col h-[calc(100svh-64px)] min-h-[600px] overflow-hidden border-b border-line ">
+            {/* edge rulers: faint full-height guides near the screen edges, with a bracket on the left */}
+            <div aria-hidden className=" pointer-events-none absolute inset-y-0 left-3 sm:left-5 hidden sm:block w-px bg-white/[0.05] " />
+            <div aria-hidden className=" pointer-events-none absolute inset-y-0 right-3 sm:right-5 hidden sm:block w-px bg-white/[0.05] " />
+            <div aria-hidden className=" pointer-events-none absolute left-3 sm:left-5 top-1/2 hidden sm:block h-40 w-2 -translate-y-1/2 border-y border-l border-white/25 " />
 
             <div className=" relative flex-1 ">
                 <TechOrbit />
@@ -34,7 +34,7 @@ const Hero = () => {
                             <span className=" text-brightRed ">●</span> {site.title} <span className=" text-white/25 ">/</span> {site.titleDetail}
                         </p>
 
-                        <h1 className=" text-fg font-semibold uppercase leading-[0.95] tracking-[-0.02em] text-[44px] mobile:text-[54px] sm:text-[68px] lg:text-[84px] [text-shadow:0_4px_30px_rgba(0,0,0,0.8)] ">
+                        <h1 className=" text-fg font-semibold uppercase leading-[0.95] tracking-[-0.02em] text-[44px] mobile:text-[54px] sm:text-[72px] lg:text-[92px] 2xl:text-[112px] [text-shadow:0_4px_30px_rgba(0,0,0,0.8)] ">
                             <span className=" block text-muted ">From server</span>
                             <span className=" block ">
                                 to screen
@@ -42,7 +42,7 @@ const Hero = () => {
                             </span>
                         </h1>
 
-                        <p className=" max-w-[540px] text-[15px] sm:text-[17px] leading-relaxed text-muted [text-shadow:0_2px_16px_rgba(0,0,0,0.9)] ">
+                        <p className=" max-w-[600px] text-[15px] sm:text-[18px] leading-relaxed text-muted [text-shadow:0_2px_16px_rgba(0,0,0,0.9)] ">
                             I build web, mobile and IoT products end to end: React and Next.js on the web,
                             React Native on iOS and Android, and NestJS with MySQL behind them.
                         </p>
