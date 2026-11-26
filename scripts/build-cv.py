@@ -1,5 +1,8 @@
 """
-Builds the downloadable CV (public/cv/Famakinde-Oluwapelumi-CV.pdf).
+Builds the older, longer 3-page CV (Famakinde-Oluwapelumi-CV-long.pdf, git-ignored).
+
+The CV the site serves (public/cv/Famakinde-Oluwapelumi-CV.pdf) is now the 2-page UK
+version, made outside this script, so this no longer writes into public/.
 
 Edit the content below and re-run. Layout mirrors the original Google Docs CV:
 US Letter, 1-inch margins, Arial, bold section headings, bulleted entries with bold lead-ins.
@@ -16,7 +19,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.fonts import addMapping
 from reportlab.platypus import ListFlowable, ListItem, Paragraph, SimpleDocTemplate, Spacer, KeepTogether
 
-OUT = "public/cv/Famakinde-Oluwapelumi-CV.pdf"
+OUT = "Famakinde-Oluwapelumi-CV-long.pdf"
 FONT_DIR = "/System/Library/Fonts/Supplemental"
 
 pdfmetrics.registerFont(TTFont("Arial", f"{FONT_DIR}/Arial.ttf"))
