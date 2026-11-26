@@ -56,6 +56,11 @@ export const skills: SkillGroup[] = [
         items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS"],
     },
     {
+        title: "AI-assisted development",
+        text: "Agentic AI in the daily workflow, from planning to debugging.",
+        items: ["Claude Code", "Agentic workflows", "Planning & refactoring", "Debugging"],
+    },
+    {
         title: "Accessibility",
         text: "Interfaces that work with assistive tech, audited and tested.",
         items: ["WCAG 2.2", "ARIA", "VoiceOver · TalkBack · NVDA", "Axe · Lighthouse"],
